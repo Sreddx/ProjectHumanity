@@ -1,5 +1,5 @@
 # Project Humanity
-Project Heroes is a third person action platformer dungeon crawler made in Unity. We took inspiration from games like Hades, Blue Fire, Risk of Rain 2 and Metroid Prime.
+Project Humanity is a third person action platformer dungeon crawler made in Unity. We took inspiration from games like Hades, Blue Fire, Risk of Rain 2 and Metroid Prime.
 The project is ongoing and is currently being designed and developed.
 
 Documentation: https://drive.google.com/drive/folders/1G7DsDPOPMi0hXJaag7AXzLstK9FPripq
