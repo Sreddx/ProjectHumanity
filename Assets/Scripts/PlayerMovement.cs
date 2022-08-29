@@ -40,10 +40,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update() {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         MyInput();
+
         SpeedControler();
     
         // Debug.Log("grounded: " + grounded);
         //Debug.Log("velocity: " + rb.velocity.magnitude);
+
         //Apply handle drag (friction)
         if(grounded){
             rb.drag = groundDrag;
