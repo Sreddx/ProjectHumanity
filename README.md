@@ -10,11 +10,11 @@ ToDo: https://docs.google.com/document/d/1iIZs_HS78Mh9V87Py3Nno5zKNxNOfBDxy6Pz8h
 
 Team Members: 
 - Sebastian Andres Rojas Salazar
-Rol: Programador, Game Designer
+Rol: Programmer, Game Designer
 - Abraham Mendoza Perez
-Rol: Programador, Game Designer
+Rol: Programmer, Game Designer
 - Antonio Pineda Baca
-Rol: Programador, Level Designer y Artista
+Rol: Programmer, Level Designer y Artist
 
 
 
