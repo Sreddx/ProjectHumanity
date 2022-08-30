@@ -94,11 +94,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    // private void OnDrawGizmos() {
-    //     // draw ground check ray
-    //     Gizmos.color = Color.red;
-    //     Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
-    // }
+    private void OnDrawGizmos() {
+        // draw ground check ray
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
+    }
 
     //Jump Section
     private void Jump(){
