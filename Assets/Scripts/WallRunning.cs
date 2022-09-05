@@ -10,10 +10,15 @@ public class WallRunning : MonoBehaviour
     public float wallRunForce;
     public float maxWallRunTime;
     private float wallRunTimer;
+    //Jump vars
+    public float wallJumpUpForce;
+    public float wallJumpSideForce;
+    
 
     [Header("Input")]
     private float horizontalInput;
     private float verticalInput;
+    public  KeyCode jumpKey = KeyCode.Space;
 
     [Header("Detection")]
     public float wallCheckDistance;
@@ -23,6 +28,11 @@ public class WallRunning : MonoBehaviour
     private RaycastHit rightWallHit;
     private bool wallLeft;
     private bool wallRight;
+
+    [Header("Exiting")]
+    private bool exitingWall;
+    public float exitWallTime;
+    private float exitWallTimer;
 
     [Header("References")]
     public Transform orientation;
@@ -39,6 +49,7 @@ public class WallRunning : MonoBehaviour
     {
         CheckForWall();
         StateMachine();
+        Debug.Log(exitingWall);
     }
 
     private void FixedUpdate(){
@@ -66,23 +77,49 @@ public class WallRunning : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //State 1 - Wall running
-        if((wallLeft || wallRight) && verticalInput > 0 && AboveGround()){
+        if((wallLeft || wallRight) && verticalInput > 0 && AboveGround() && !exitingWall){
             if(!pm.wallrunning){
                 StartWallRun();
             }
+            //Wall Run timer
+            if (wallRunTimer > 0){
+                wallRunTimer -= Time.deltaTime;
+            }
+
+            if (wallRunTimer <= 0 && pm.wallrunning){
+                exitingWall = true;
+                exitWallTimer = exitWallTime;
+            }
+            // wall jump
+            if(Input.GetKeyDown(jumpKey)){
+                WallJump();
+            }
+        }
+        //State 2 - Exiting wall
+        else if(exitingWall){
+            if(!pm.wallrunning)
+                StopWallRun();
+        
+            if (exitWallTimer > 0 )
+                exitWallTimer -= Time.deltaTime;
+
+            if (exitWallTimer <= 0)
+                exitingWall = false;
+            
+
         }
         //State 3 - None
         else
         {
-            if(pm.wallrunning){
+            if(pm.wallrunning)
                 StopWallRun();
-            }
+            
         }
     }
 
     private void StartWallRun(){
         pm.wallrunning = true;
-
+        wallRunTimer = maxWallRunTime;
     }
 
     private void WallRunningMovement(){
@@ -108,6 +145,21 @@ public class WallRunning : MonoBehaviour
 
     private void StopWallRun(){
         pm.wallrunning = false;
+    }
+
+    private void WallJump(){
+        // enter exiting wall state
+        exitingWall = true;
+        exitWallTimer = exitWallTime;
+
+        //Calculate wall jump direction and force
+        Vector3 wallNormal = wallRight ? rightWallHit.normal : leftWallHit.normal;
+
+        Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+
+        //Add force to the player
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(forceToApply, ForceMode.Impulse);
         
     }
 
