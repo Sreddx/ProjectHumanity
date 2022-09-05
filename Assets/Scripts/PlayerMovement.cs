@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
+    public float wallRunSpeed;
 
 
     public float groundDrag;
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public float playerHeight;
-    public LayerMask whatIsGround;
+    public LayerMask Ground;
     bool grounded;
 
     public Transform orientation;
@@ -41,8 +42,11 @@ public class PlayerMovement : MonoBehaviour
     {
         walking,
         sprinting,
+        wallrunning,
         Airborne
     }
+
+    public bool wallrunning;
 
     // Control
     private void Start() {
@@ -52,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() {
         //Check ground with raycast
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
         
         //Movement checkers and inputs
         MyInput();
@@ -90,6 +94,10 @@ public class PlayerMovement : MonoBehaviour
 
     //State handler
     private void StateHandler(){
+        if(wallrunning){
+            state = MovementState.wallrunning;
+            moveSpeed = wallRunSpeed;
+        }
         if(grounded){
             if(Input.GetKey(sprintKey)){
                 state = MovementState.sprinting;
