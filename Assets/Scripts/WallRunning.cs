@@ -49,7 +49,7 @@ public class WallRunning : MonoBehaviour
     {
         CheckForWall();
         StateMachine();
-        Debug.Log(exitingWall);
+        // Debug.Log(exitingWall);
     }
 
     private void FixedUpdate(){
@@ -90,14 +90,14 @@ public class WallRunning : MonoBehaviour
                 exitingWall = true;
                 exitWallTimer = exitWallTime;
             }
-            // wall jump
+            //wall jump
             if(Input.GetKeyDown(jumpKey)){
                 WallJump();
             }
         }
         //State 2 - Exiting wall
         else if(exitingWall){
-            if(!pm.wallrunning)
+            if(pm.wallrunning)
                 StopWallRun();
         
             if (exitWallTimer > 0 )
