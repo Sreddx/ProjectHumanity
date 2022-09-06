@@ -1586,6 +1586,8 @@ MonoBehaviour:
   orientation: {fileID: 1353731487}
   state: 0
   wallrunning: 0
+  freeze: 0
+  activeGrapple: 0
 --- !u!114 &722856675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,10 +1644,11 @@ MonoBehaviour:
   gunTip: {fileID: 604686597}
   whatIsGrappleable:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 2048
   lr: {fileID: 1160247263}
   maxGrappleDistance: 25
   grappleDelayTime: 0.25
+  overshootYAxis: 1
   grapplingCd: 1
   grappleKey: 324
 --- !u!1 &773996343
@@ -1823,7 +1826,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794764216}
-  m_LocalRotation: {x: 0.04763197, y: -9.956169e-10, z: -4.7489512e-11, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763197, y: 9.956169e-10, z: 4.748956e-11, w: 0.99886495}
   m_LocalPosition: {x: -0.9605756, y: -1.8180861, z: -5.0359497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1934,7 +1937,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807201829}
-  m_LocalRotation: {x: -0.23432596, y: 0.0000000025102391, z: -0.00000000112755, w: 0.97215813}
+  m_LocalRotation: {x: -0.23432596, y: -0.000000029852167, z: 0.000000013395791, w: 0.97215813}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
