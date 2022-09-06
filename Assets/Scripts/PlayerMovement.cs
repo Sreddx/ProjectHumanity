@@ -104,10 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if(wallrunning){
-            state = MovementState.wallrunning;
-            moveSpeed = wallRunSpeed;
-        }
+        
         if(grounded){
             if(Input.GetKey(sprintKey)){
                 state = MovementState.sprinting;
@@ -117,6 +114,11 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.walking;
                 moveSpeed = walkSpeed;
             }
+        }else if(wallrunning){
+            
+            state = MovementState.wallrunning;
+            moveSpeed = wallRunSpeed;
+        
         }
         else{
             state = MovementState.Airborne;

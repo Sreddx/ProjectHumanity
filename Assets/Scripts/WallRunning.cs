@@ -82,6 +82,7 @@ public class WallRunning : MonoBehaviour
             if(!pm.wallrunning){
                 StartWallRun();
             }
+            
             //Wall Run timer
             if (wallRunTimer > 0){
                 wallRunTimer -= Time.deltaTime;
@@ -114,7 +115,6 @@ public class WallRunning : MonoBehaviour
         {
             if(pm.wallrunning)
                 StopWallRun();
-            
         }
     }
 
@@ -139,7 +139,7 @@ public class WallRunning : MonoBehaviour
 
         //Make player stick to wall
         if(!(wallLeft && horizontalInput >0) && !(wallRight && horizontalInput <0)){
-            rb.AddForce(-wallNormal * 100, ForceMode.Force);
+            rb.AddForce(-wallNormal * 90, ForceMode.Force);
         }
 
     }
@@ -162,6 +162,13 @@ public class WallRunning : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(forceToApply, ForceMode.Impulse);
         
+    }
+
+     private void OnDrawGizmos() {
+        // draw ground check ray
+        Gizmos.color = Color.red;
+        //draw raycast for wall check
+        Gizmos.DrawRay(transform.position, -orientation.right * wallCheckDistance);
     }
 
 }
