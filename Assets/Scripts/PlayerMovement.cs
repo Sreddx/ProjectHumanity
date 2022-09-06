@@ -168,6 +168,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private bool enableMovementOnNextTouch;
+
 
      public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
     {
@@ -176,22 +178,39 @@ public class PlayerMovement : MonoBehaviour
         velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
         Invoke(nameof(SetVelocity), 0.1f);
 
-        //Invoke(nameof(ResetRestrictions), 3f);
+        Invoke(nameof(ResetRestrictions), 3f);
     }
 
     private Vector3 velocityToSet;
     private void SetVelocity()
     {
-        //enableMovementOnNextTouch = true;
+        enableMovementOnNextTouch = true;
         rb.velocity = velocityToSet;
 
     
     }
 
+    public void ResetRestrictions(){
+        activeGrapple = false;
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(enableMovementOnNextTouch)
+        {
+            enableMovementOnNextTouch = false;
+            ResetRestrictions();
+            
+            GetComponent<Grappling>().StopGrapple();
+        }
+    }
+
 
      public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
     {
-        float gravity = Physics.gravity.y;
+        float gravity = -20;
+        Debug.Log(gravity);
         float displacementY = endPoint.y - startPoint.y;
         Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
 
