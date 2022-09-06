@@ -49,7 +49,7 @@ public class WallRunning : MonoBehaviour
     {
         CheckForWall();
         StateMachine();
-        Debug.Log(exitingWall);
+        //Debug.Log(exitingWall);
     }
 
     private void FixedUpdate(){
