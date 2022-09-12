@@ -5,11 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float health;
+    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody>();   
     }
 
     // Update is called once per frame
@@ -27,5 +28,13 @@ public class Enemy : MonoBehaviour
         if(health <= 0){
             Destroy(gameObject);
         }
+    }
+
+    public void GetHit(Vector3 direction){
+        Debug.Log("Si");
+        Vector3 force = direction * 5 + Vector3.up * 1;
+        Debug.Log(force);
+        rb.AddForce(force, ForceMode.Impulse);
+        this.transform.parent = null;
     }
 }
