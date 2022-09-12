@@ -47,21 +47,19 @@ public class MeleeAttack : MonoBehaviour
     void ShootRayCast()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, orientation.transform.forward, out hit, range))
+        Ray ray = new Ray(transform.position, orientation.transform.forward);
+        
+        if(Physics.Raycast(ray, out hit, range))
         {
-            Enemy target = hit.transform.GetComponent<Enemy>();
-
-            if(target != null)
-            {
-                Punch();
+            if(hit.transform.TryGetComponent<Enemy>(out Enemy ts)){
+                ts.GetHit(ray.direction);
                 Debug.Log("Hit");
             }
-
         }
     }
 
-    private void Punch(){
+    /*private void Punch(){
         Enemy.transform.position += transform.forward * Time.deltaTime * Knockback;
 
-    }
+    }*/
 }
