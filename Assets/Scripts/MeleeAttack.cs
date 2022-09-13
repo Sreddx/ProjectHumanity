@@ -12,6 +12,7 @@ public class MeleeAttack : MonoBehaviour
     [SerializeField] public float lightDamage;
     [SerializeField] public float heavyDamage;
     public bool lightMelee;
+    public bool heavyMelee;
 
 
     Collider weapon;
@@ -28,26 +29,25 @@ public class MeleeAttack : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")){
+        Action();
+    }
+
+    void Action(){
+        if (Input.GetKeyDown(KeyCode.Mouse0)){
             lightMelee = true;
-            /*weapon.enabled = true;
-            Rotate weapon and make it bigger
-            weaponTransform.Rotate(0, 99, 0);
-            weaponTransform.localScale = new Vector3(0.50f, 1f, 0.50f);
-            */
             ShootRayCast();
+            lightMelee = false;
         }
-        
-        else if (Input.GetButtonUp("Fire1")){
-            /*weapon.enabled = false;
-            Return weapon to default values
-            weaponTransform.Rotate(0, 55, 0);
-            weaponTransform.localScale = new Vector3(0.10f, 0.50f, 0.23f);
-            */
+
+        if (Input.GetKeyDown(KeyCode.Mouse4)){
+            heavyMelee = true;
+            ShootRayCast();
+            heavyMelee = false;
+            
         }
-        
     }
 
     void ShootRayCast()

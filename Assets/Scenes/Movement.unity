@@ -1871,8 +1871,9 @@ MonoBehaviour:
   orientation: {fileID: 1353731486}
   Enemy: {fileID: 0}
   lightDamage: 10
-  heavyDamage: 0
+  heavyDamage: 25
   lightMelee: 0
+  heavyMelee: 0
 --- !u!1 &773996343
 GameObject:
   m_ObjectHideFlags: 0

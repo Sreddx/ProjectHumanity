@@ -49,10 +49,20 @@ public class Enemy : MonoBehaviour
     public void GetHit(Vector3 direction){
 
         EnemyHealth();
-        Vector3 force = direction * 5 + Vector3.up * 1;
-        Debug.Log(force);
-        rb.AddForce(force, ForceMode.Impulse);
-        this.transform.parent = null;
+
+        if(attack.lightMelee == true){
+
+            Vector3 force = direction * 5 + Vector3.up * 1;
+            Debug.Log(force);
+            rb.AddForce(force, ForceMode.Impulse);
+            this.transform.parent = null;
+
+        }else{
+            Vector3 force = direction * 2 + Vector3.up * 5;
+            Debug.Log(force);
+            rb.AddForce(force, ForceMode.Impulse);
+            this.transform.parent = null;
+        }
         
     }
 }
