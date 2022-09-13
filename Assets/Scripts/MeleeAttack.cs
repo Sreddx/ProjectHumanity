@@ -9,6 +9,11 @@ public class MeleeAttack : MonoBehaviour
     public float Knockback = 250;
     public GameObject orientation;
     public GameObject Enemy;
+    [SerializeField] public float lightDamage;
+    [SerializeField] public float heavyDamage;
+    public bool lightMelee;
+
+
     Collider weapon;
     Transform weaponTransform; 
 
@@ -26,6 +31,7 @@ public class MeleeAttack : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1")){
+            lightMelee = true;
             /*weapon.enabled = true;
             Rotate weapon and make it bigger
             weaponTransform.Rotate(0, 99, 0);

@@ -269,7 +269,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 2.2746115, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 2.2746115, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1488,7 +1488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be1a4816b8fa148aca67fb35601521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 50
+  attack: {fileID: 722856678}
   rb: {fileID: 0}
 --- !u!54 &664903211
 Rigidbody:
@@ -1868,7 +1869,10 @@ MonoBehaviour:
   range: 100
   Knockback: 250
   orientation: {fileID: 1353731486}
-  Enemy: {fileID: 1857652827}
+  Enemy: {fileID: 0}
+  lightDamage: 10
+  heavyDamage: 0
+  lightMelee: 0
 --- !u!1 &773996343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2048,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794764216}
-  m_LocalRotation: {x: 0.04763197, y: -9.956169e-10, z: -4.7489512e-11, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763197, y: 9.956169e-10, z: 4.748956e-11, w: 0.99886495}
   m_LocalPosition: {x: -0.9605756, y: -1.8180861, z: -5.0359497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2139,7 +2143,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 2.2746115, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2155,7 +2159,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807201829}
-  m_LocalRotation: {x: -0.23432596, y: 0.0000000025102391, z: -0.00000000112755, w: 0.97215813}
+  m_LocalRotation: {x: -0.23432596, y: -0.000000029852167, z: 0.000000013395791, w: 0.97215813}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2708,7 +2712,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 2.2746115, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3633,16 +3637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1857652827 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8016298678997967723, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
-  m_PrefabInstance: {fileID: 1995950281}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1857652829 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8016298678997967722, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
-  m_PrefabInstance: {fileID: 1995950281}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1908971192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,7 +3830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 23.079, y: 0, z: 0}
 --- !u!1001 &1995950281
 PrefabInstance:
@@ -3845,6 +3839,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6341957305623703521, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 722856671}
+    - target: {fileID: 6341957305623703546, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 722856678}
+    - target: {fileID: 6341957305623703546, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8016298678997967721, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -3860,7 +3866,7 @@ PrefabInstance:
     - target: {fileID: 8016298678997967725, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
       propertyPath: rb
       value: 
-      objectReference: {fileID: 1857652829}
+      objectReference: {fileID: 0}
     - target: {fileID: 8016298678997967726, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
       propertyPath: m_RootOrder
       value: 1
