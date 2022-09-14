@@ -16,7 +16,7 @@ public class EnemyMaster : MonoBehaviour
     private void Start()
     {
         enemyAgent = GetComponent<NavMeshAgent>();
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()

@@ -161,9 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be1a4816b8fa148aca67fb35601521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  attack: {fileID: 0}
-  rb: {fileID: 0}
+  health: 50
+  attack: {fileID: 5027490478255137659, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+  rb: {fileID: 6341957305623703547}
 --- !u!195 &6341957305623703520
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d6cbb8b0048c49855a44ae66b9a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5027490478255137602, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+  player: {fileID: 0}
   detectionDistance: 20
   isAngered: 0
   enemyAgent: {fileID: 6341957305623703520}
