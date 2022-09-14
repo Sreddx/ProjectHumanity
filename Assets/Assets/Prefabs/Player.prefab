@@ -163,7 +163,7 @@ MonoBehaviour:
   range: 100
   Knockback: 250
   orientation: {fileID: 5027490480329049091}
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 6341957304623986356, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
   lightDamage: 10
   heavyDamage: 25
   lightMelee: 0
