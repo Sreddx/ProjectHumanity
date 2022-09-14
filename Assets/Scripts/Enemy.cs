@@ -8,10 +8,12 @@ public class Enemy : MonoBehaviour
     public MeleeAttack attack;
     public Rigidbody rb;
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();   
+         
     }
 
     // Update is called once per frame
@@ -44,12 +46,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    IEnumerator blink(){
+        for(int i = 0; i < 3; i++){
+            gameObject.GetComponent<Renderer>().enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<Renderer>().enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     public void GetHit(Vector3 direction){
 
         EnemyHealth();
-
+        StartCoroutine(blink());
         if(attack.lightMelee == true){
 
             Vector3 force = direction * 5 + Vector3.up * 1;
