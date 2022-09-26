@@ -4,46 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health;
+    
+    public UnitHealth _enemyHealth = new UnitHealth(100,100); //Instantiate Unit health class for enemy health
     public MeleeAttack attack;
     public Rigidbody rb;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();   
          
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other){
-        if(other.tag == "Weapon"){
-            health = health - 10;
-            Debug.Log(health);
-        }
-
-        if(health <= 0){
-            Destroy(gameObject);
-        }
-    }
-
-    public void EnemyHealth(){
-        if(attack.lightMelee == true){
-            Debug.Log("Light");
-            health -= attack.lightDamage;
-        }else{
-            health -= attack.heavyDamage;
-        }
-
-        if(health <= 0){
-            Destroy(gameObject);
-        }
     }
 
     IEnumerator blink(){
@@ -57,20 +27,32 @@ public class Enemy : MonoBehaviour
 
     public void GetHit(Vector3 direction){
 
-        EnemyHealth();
-        StartCoroutine(blink());
+        EnemyTakeDamage(); //Call method to take damage
+        StartCoroutine(blink()); //Call blink for visual damage feedback
         if(attack.lightMelee == true){
 
             Vector3 force = direction * 5 + Vector3.up * 1;
-            Debug.Log(force);
+            //Debug.Log(force);
             rb.AddForce(force, ForceMode.Impulse);
             this.transform.parent = null;
 
         }else{
             Vector3 force = direction * 2 + Vector3.up * 5;
-            Debug.Log(force);
+            //Debug.Log(force);
             rb.AddForce(force, ForceMode.Impulse);
             this.transform.parent = null;
+        }
+        
+    }
+    private void EnemyTakeDamage() {
+        if(attack.lightMelee == true){
+            _enemyHealth.DmgUnit(attack.lightDamage);
+        }else{
+            _enemyHealth.DmgUnit(attack.heavyDamage);
+        }
+
+        if(_enemyHealth.Health <= 0){
+            Destroy(gameObject);
         }
         
     }

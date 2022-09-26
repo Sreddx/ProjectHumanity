@@ -19,7 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
         //     Debug.Log(GameManager.gameManager._playerHealth.Health);
         // }
         if(Input.GetKeyDown(KeyCode.H)){
-            playerHeal(30);
+            PlayerHeal(30);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
     }
@@ -30,17 +30,17 @@ public class PlayerBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         
         if(other.tag == "Enemy"){
-            playerTakeDamage(10);
+            PlayerTakeDamage(10);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
 
     }
 
-    private void playerTakeDamage(int damage) {
+    private void PlayerTakeDamage(int damage) {
         GameManager.gameManager._playerHealth.DmgUnit(damage);
     }
 
-    private void playerHeal(int healing) {
+    private void PlayerHeal(int healing) {
         GameManager.gameManager._playerHealth.Heal(healing);
     }
 }
