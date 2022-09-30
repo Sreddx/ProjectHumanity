@@ -9,8 +9,8 @@ public class MeleeAttack : MonoBehaviour
     public float Knockback = 250;
     public GameObject orientation;
     public GameObject Enemy;
-    [SerializeField] public float lightDamage;
-    [SerializeField] public float heavyDamage;
+    [SerializeField] public int lightDamage;
+    [SerializeField] public int heavyDamage;
     public bool lightMelee;
     public bool heavyMelee;
 
@@ -59,7 +59,7 @@ public class MeleeAttack : MonoBehaviour
         {
             if(hit.transform.TryGetComponent<Enemy>(out Enemy ts)){
                 ts.GetHit(ray.direction);
-                Debug.Log("Hit");
+                //Debug.Log("Hit");
             }
         }
     }
