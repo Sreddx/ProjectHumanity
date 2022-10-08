@@ -3787,6 +3787,38 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 794764219}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _wallRunForce
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _minJumpHeight
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _maxWallRunTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _wallJumpUpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _wallLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _wallCheckDistance
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _wallJumpSideForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _groundLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 5027490478255137660, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: m_RootOrder
       value: 2
