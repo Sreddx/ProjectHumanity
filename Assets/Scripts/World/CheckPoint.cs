@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    public static Vector3 ReachedPoint;
+    public static Vector3 s_reachedPoint;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            ReachedPoint = transform.position;
+            s_reachedPoint = transform.position;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fall : MonoBehaviour
 {
-    [SerializeField] private Transform jugador;
+    [SerializeField] private Transform _player;
 
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +20,7 @@ public class Fall : MonoBehaviour
     IEnumerator TPlayer()
     {
         yield return new WaitForSeconds(1);
-        jugador.transform.position = CheckPoint.ReachedPoint;
+        _player.transform.position = CheckPoint.s_reachedPoint;
         Physics.SyncTransforms();
     }
 
