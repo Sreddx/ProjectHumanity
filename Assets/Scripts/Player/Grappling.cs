@@ -12,20 +12,20 @@ public class Grappling : MonoBehaviour
     public LineRenderer lr;
 
     [Header("Grappling")]
-    public float maxGrappleDistance;
-    public float grappleDelayTime;
-    public float overshootYAxis;
+    [SerializeField] private float _maxGrappleDistance;
+    [SerializeField] private float _grappleDelayTime;
+    [SerializeField] private float _overshootYAxis;
 
-    private Vector3 grapplePoint;
+    private Vector3 _grapplePoint;
 
     [Header("Cooldown")]
-    public float grapplingCd;
-    private float grapplingCdTimer;
+    [SerializeField] private float _grapplingCd;
+    private float _grapplingCdTimer;
 
     [Header("Input")]
     public KeyCode grappleKey = KeyCode.Mouse1;
 
-    private bool grappling;
+    private bool _grappling;
 
     private void Start()
     {
@@ -36,42 +36,42 @@ public class Grappling : MonoBehaviour
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
 
-        if(grapplingCdTimer > 0){
-            grapplingCdTimer -= Time.deltaTime;
+        if(_grapplingCdTimer > 0){
+            _grapplingCdTimer -= Time.deltaTime;
         }
     }
 
     private void LateUpdate(){
-        if (grappling){
+        if (_grappling){
             lr.SetPosition(0,gunTip.position);
         }
     }
 
     private void StartGrapple()
     {
-        if (grapplingCdTimer > 0) return;
+        if (_grapplingCdTimer > 0) return;
 
-        grappling = true;
+        _grappling = true;
 
         pm.freeze = true;
 
         RaycastHit hit;
         
-        if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
+        if(Physics.Raycast(cam.position, cam.forward, out hit, _maxGrappleDistance, whatIsGrappleable))
         {
-            grapplePoint = hit.point;
+            _grapplePoint = hit.point;
 
-            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+            Invoke(nameof(ExecuteGrapple), _grappleDelayTime);
         }
         else
         {
-            grapplePoint = cam.position + cam.forward * maxGrappleDistance;
+            _grapplePoint = cam.position + cam.forward * _maxGrappleDistance;
 
-            Invoke(nameof(StopGrapple), grappleDelayTime);
+            Invoke(nameof(StopGrapple), _grappleDelayTime);
         }
 
         lr.enabled = true;
-        lr.SetPosition(1, grapplePoint);
+        lr.SetPosition(1, _grapplePoint);
     }
 
     private void ExecuteGrapple()
@@ -80,12 +80,12 @@ public class Grappling : MonoBehaviour
 
         Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
 
-        float grapplePointRelativeYPos = grapplePoint.y - lowestPoint.y;
-        float highestPointOnArc = grapplePointRelativeYPos + overshootYAxis;
+        float _grapplePointRelativeYPos = _grapplePoint.y - lowestPoint.y;
+        float highestPointOnArc = _grapplePointRelativeYPos + _overshootYAxis;
 
-        if (grapplePointRelativeYPos < 0) highestPointOnArc = overshootYAxis;
+        if (_grapplePointRelativeYPos < 0) highestPointOnArc = _overshootYAxis;
 
-        pm.JumpToPosition(grapplePoint, highestPointOnArc);
+        pm.JumpToPosition(_grapplePoint, highestPointOnArc);
 
         Invoke(nameof(StopGrapple), 1f);
     }
@@ -94,9 +94,9 @@ public class Grappling : MonoBehaviour
     {
         pm.freeze = false;
 
-        grappling = false;
+        _grappling = false;
 
-        grapplingCdTimer = grapplingCd;
+        _grapplingCdTimer = _grapplingCd;
 
         lr.enabled = false;
     }
