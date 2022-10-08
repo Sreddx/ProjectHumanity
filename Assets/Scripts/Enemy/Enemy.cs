@@ -46,9 +46,9 @@ public class Enemy : MonoBehaviour
     }
     private void EnemyTakeDamage() {
         if(attack.lightMelee == true){
-            _enemyHealth.DmgUnit(attack.lightDamage);
+            _enemyHealth.DmgUnit(attack._lightDamage);
         }else{
-            _enemyHealth.DmgUnit(attack.heavyDamage);
+            _enemyHealth.DmgUnit(attack._heavyDamage);
         }
 
         if(_enemyHealth.Health <= 0){

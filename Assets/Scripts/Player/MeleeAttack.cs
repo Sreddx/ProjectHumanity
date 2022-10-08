@@ -5,18 +5,32 @@ using UnityEngine;
 public class MeleeAttack : MonoBehaviour
 
 {
+    //Attack properties
     public float range = 100f;
     public float Knockback = 250;
-    public GameObject orientation;
-    public GameObject Enemy;
-    [SerializeField] public int lightDamage;
-    [SerializeField] public int heavyDamage;
+    [SerializeField] private int _lightDamage;
+    [SerializeField] private int _heavyDamage;
     public bool lightMelee;
     public bool heavyMelee;
 
 
+    public GameObject orientation;
+    public GameObject Enemy;
     Collider weapon;
     Transform weaponTransform; 
+
+
+    public int LightMeleeDamage
+    {
+        get { return _lightDamage; }
+        set { _lightDamage = value; }
+    }
+
+     public int HeavyMeleeDamage
+    {
+        get { return _heavyDamage; }
+        set { _heavyDamage = value; }
+    }
 
 
     // Start is called before the first frame update
