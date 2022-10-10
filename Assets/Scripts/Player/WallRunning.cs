@@ -5,81 +5,82 @@ using UnityEngine;
 public class WallRunning : MonoBehaviour
 {
     [Header("Wall Running")]
-    public LayerMask wallLayer;
-    public LayerMask groundLayer;
-    public float wallRunForce;
-    public float maxWallRunTime;
+    [SerializeField] private LayerMask _wallLayer;
+    [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private float _wallRunForce;
+    [SerializeField] private float _maxWallRunTime;
     private float wallRunTimer;
     //Jump vars
-    public float wallJumpUpForce;
-    public float wallJumpSideForce;
+    
+    [SerializeField] private float _wallJumpUpForce;
+    [SerializeField] private float _wallJumpSideForce;
     
 
     [Header("Input")]
-    private float horizontalInput;
-    private float verticalInput;
-    public  KeyCode jumpKey = KeyCode.Space;
+    private float _horizontalInput;
+    private float _verticalInput;
+    private  KeyCode _jumpKey = KeyCode.Space;
 
     [Header("Detection")]
-    public float wallCheckDistance;
-    public float minJumpHeight;
+    [SerializeField] private float _wallCheckDistance;
+    [SerializeField] private float _minJumpHeight;
 
-    private RaycastHit leftWallHit;
-    private RaycastHit rightWallHit;
-    private bool wallLeft;
-    private bool wallRight;
+    private RaycastHit _leftWallHit;
+    private RaycastHit _rightWallHit;
+    private bool _wallLeft;
+    private bool _wallRight;
 
     [Header("Exiting")]
-    private bool exitingWall;
-    public float exitWallTime;
-    private float exitWallTimer;
+    private bool _exitingWall;
+    public float _exitWallTime;
+    private float _exitWallTimer;
 
     [Header("References")]
-    public Transform orientation;
-    private PlayerMovement pm;
+    public Transform _orientation;
+    private PlayerMovement _playerMov;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovement>();
+        _playerMov = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
         CheckForWall();
         StateMachine();
-        //Debug.Log(exitingWall);
+        //Debug.Log(_exitingWall);
 
     }
 
     private void FixedUpdate(){
-        if(pm.wallrunning){
+        if(_playerMov.wallrunning){
             WallRunningMovement();
         }
     }
 
     private void CheckForWall(){
         //Check for wall on the left
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallCheckDistance, wallLayer);
+        _wallLeft = Physics.Raycast(transform.position, -_orientation.right, out _leftWallHit, _wallCheckDistance, _wallLayer);
 
         //Check for wall on the right
-        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallCheckDistance, wallLayer);
+        _wallRight = Physics.Raycast(transform.position, _orientation.right, out _rightWallHit, _wallCheckDistance, _wallLayer);
             
     }
 
     private bool AboveGround(){
-        return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, groundLayer);
+        return !Physics.Raycast(transform.position, Vector3.down, _minJumpHeight, _groundLayer);
     }
 
     private void StateMachine(){
         //Getting inputs
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        _verticalInput = Input.GetAxisRaw("Vertical");
 
         //State 1 - Wall running
-        if((wallLeft || wallRight) && verticalInput > 0 && AboveGround() && !exitingWall){
-            if(!pm.wallrunning){
+        if((_wallLeft || _wallRight) && _verticalInput > 0 && AboveGround() && !_exitingWall){
+            if(!_playerMov.wallrunning){
                 StartWallRun();
             }
             
@@ -88,75 +89,75 @@ public class WallRunning : MonoBehaviour
                 wallRunTimer -= Time.deltaTime;
             }
 
-            if (wallRunTimer <= 0 && pm.wallrunning){
-                exitingWall = true;
-                exitWallTimer = exitWallTime;
+            if (wallRunTimer <= 0 && _playerMov.wallrunning){
+                _exitingWall = true;
+                _exitWallTimer = _exitWallTime;
             }
             //wall jump
-            if(Input.GetKeyDown(jumpKey)){
+            if(Input.GetKeyDown(_jumpKey)){
                 WallJump();
             }
         }
         //State 2 - Exiting wall
-        else if(exitingWall){
-            if(pm.wallrunning)
+        else if(_exitingWall){
+            if(_playerMov.wallrunning)
                 StopWallRun();
         
-            if (exitWallTimer > 0 )
-                exitWallTimer -= Time.deltaTime;
+            if (_exitWallTimer > 0 )
+                _exitWallTimer -= Time.deltaTime;
 
-            if (exitWallTimer <= 0)
-                exitingWall = false;
+            if (_exitWallTimer <= 0)
+                _exitingWall = false;
             
 
         }
         //State 3 - None
         else
         {
-            if(pm.wallrunning)
+            if(_playerMov.wallrunning)
                 StopWallRun();
         }
     }
 
     private void StartWallRun(){
-        pm.wallrunning = true;
-        wallRunTimer = maxWallRunTime;
+        _playerMov.wallrunning = true;
+        wallRunTimer = _maxWallRunTime;
     }
 
     private void WallRunningMovement(){
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         
-        Vector3 wallNormal = wallRight ? rightWallHit.normal : leftWallHit.normal;
+        Vector3 wallNormal = _wallRight ? _rightWallHit.normal : _leftWallHit.normal;
 
         Vector3 wallForward = Vector3.Cross(wallNormal, Vector3.up);
 
-        if((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude){
+        if((_orientation.forward - wallForward).magnitude > (_orientation.forward - -wallForward).magnitude){
             wallForward = -wallForward;
         }
 
         //Add force to the player
-        rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
+        rb.AddForce(wallForward * _wallRunForce, ForceMode.Force);
 
-        //Make player stick to wall
-        if(!(wallLeft && horizontalInput >0) && !(wallRight && horizontalInput <0)){
+        //Make player stick to wall if they are not moving away from it
+        if(!(_wallLeft && _horizontalInput >0) && !(_wallRight && _horizontalInput <0)){
             rb.AddForce(-wallNormal * 90, ForceMode.Force);
         }
 
     }
 
     private void StopWallRun(){
-        pm.wallrunning = false;
+        _playerMov.wallrunning = false;
     }
 
     private void WallJump(){
         // enter exiting wall state
-        exitingWall = true;
-        exitWallTimer = exitWallTime;
+        _exitingWall = true;
+        _exitWallTimer = _exitWallTime;
 
         //Calculate wall jump direction and force
-        Vector3 wallNormal = wallRight ? rightWallHit.normal : leftWallHit.normal;
+        Vector3 wallNormal = _wallRight ? _rightWallHit.normal : _leftWallHit.normal;
 
-        Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+        Vector3 forceToApply = transform.up * _wallJumpUpForce + wallNormal * _wallJumpSideForce;
 
         //Add force to the player
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -168,7 +169,7 @@ public class WallRunning : MonoBehaviour
         // draw ground check ray
         Gizmos.color = Color.red;
         //draw raycast for wall check
-        Gizmos.DrawRay(transform.position, -orientation.right * wallCheckDistance);
+        Gizmos.DrawRay(transform.position, -_orientation.right * _wallCheckDistance);
     }
 
 }

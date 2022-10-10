@@ -5,12 +5,12 @@ using UnityEngine;
 public class ThirdPersonCam : MonoBehaviour
 {
     [Header("References")]
-    public Transform orientation;
-    public Transform player;
-    public Transform playerObj;
-    public Rigidbody rb;
+    [SerializeField] Transform _orientation;
+    [SerializeField] Transform _player;
+    [SerializeField] Transform _playerObj;
+    [SerializeField] Rigidbody rb;
 
-    public float roationSpeed;
+    [SerializeField] private float _rotationSpeed;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -19,19 +19,19 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void Update() 
     {
-        // rotate orientation
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
+        // rotate _orientation
+        Vector3 viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
+        _orientation.forward = viewDir.normalized;
 
-        // rotate player object to face orientation by getting inputs and calculating input dir
+        // rotate _player object to face _orientation by getting inputs and calculating input dir
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        Vector3 inputDir = _orientation.forward * verticalInput + _orientation.right * horizontalInput;
 
         if (inputDir != Vector3.zero)
         {
-            // rotate player object smoothly based on input and rotation speed
-            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, roationSpeed * Time.deltaTime);
+            // rotate _player object smoothly based on input and rotation speed
+            _playerObj.forward = Vector3.Slerp(_playerObj.forward, inputDir.normalized, _rotationSpeed * Time.deltaTime);
         }
     }
 }
