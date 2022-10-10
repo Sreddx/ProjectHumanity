@@ -36,14 +36,14 @@ public class WallRunning : MonoBehaviour
     private float _exitWallTimer;
 
     [Header("References")]
-    public Transform orientation;
-    private PlayerMovement pm;
+    public Transform _orientation;
+    private PlayerMovement _playerMov;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovement>();
+        _playerMov = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -55,17 +55,17 @@ public class WallRunning : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        if(pm.wallrunning){
+        if(_playerMov.wallrunning){
             WallRunningMovement();
         }
     }
 
     private void CheckForWall(){
         //Check for wall on the left
-        _wallLeft = Physics.Raycast(transform.position, -orientation.right, out _leftWallHit, _wallCheckDistance, _wallLayer);
+        _wallLeft = Physics.Raycast(transform.position, -_orientation.right, out _leftWallHit, _wallCheckDistance, _wallLayer);
 
         //Check for wall on the right
-        _wallRight = Physics.Raycast(transform.position, orientation.right, out _rightWallHit, _wallCheckDistance, _wallLayer);
+        _wallRight = Physics.Raycast(transform.position, _orientation.right, out _rightWallHit, _wallCheckDistance, _wallLayer);
             
     }
 
@@ -80,7 +80,7 @@ public class WallRunning : MonoBehaviour
 
         //State 1 - Wall running
         if((_wallLeft || _wallRight) && _verticalInput > 0 && AboveGround() && !_exitingWall){
-            if(!pm.wallrunning){
+            if(!_playerMov.wallrunning){
                 StartWallRun();
             }
             
@@ -89,7 +89,7 @@ public class WallRunning : MonoBehaviour
                 wallRunTimer -= Time.deltaTime;
             }
 
-            if (wallRunTimer <= 0 && pm.wallrunning){
+            if (wallRunTimer <= 0 && _playerMov.wallrunning){
                 _exitingWall = true;
                 _exitWallTimer = _exitWallTime;
             }
@@ -100,7 +100,7 @@ public class WallRunning : MonoBehaviour
         }
         //State 2 - Exiting wall
         else if(_exitingWall){
-            if(pm.wallrunning)
+            if(_playerMov.wallrunning)
                 StopWallRun();
         
             if (_exitWallTimer > 0 )
@@ -114,13 +114,13 @@ public class WallRunning : MonoBehaviour
         //State 3 - None
         else
         {
-            if(pm.wallrunning)
+            if(_playerMov.wallrunning)
                 StopWallRun();
         }
     }
 
     private void StartWallRun(){
-        pm.wallrunning = true;
+        _playerMov.wallrunning = true;
         wallRunTimer = _maxWallRunTime;
     }
 
@@ -131,7 +131,7 @@ public class WallRunning : MonoBehaviour
 
         Vector3 wallForward = Vector3.Cross(wallNormal, Vector3.up);
 
-        if((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude){
+        if((_orientation.forward - wallForward).magnitude > (_orientation.forward - -wallForward).magnitude){
             wallForward = -wallForward;
         }
 
@@ -146,7 +146,7 @@ public class WallRunning : MonoBehaviour
     }
 
     private void StopWallRun(){
-        pm.wallrunning = false;
+        _playerMov.wallrunning = false;
     }
 
     private void WallJump(){
@@ -169,7 +169,7 @@ public class WallRunning : MonoBehaviour
         // draw ground check ray
         Gizmos.color = Color.red;
         //draw raycast for wall check
-        Gizmos.DrawRay(transform.position, -orientation.right * _wallCheckDistance);
+        Gizmos.DrawRay(transform.position, -_orientation.right * _wallCheckDistance);
     }
 
 }
