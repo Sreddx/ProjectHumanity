@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class Enemy : MonoBehaviour
     public UnitHealth _enemyHealth = new UnitHealth(100,100); //Instantiate Unit health class for enemy health
     public MeleeAttack attack;
     public Rigidbody rb;
+    [SerializeField] private Renderer _enemyRenderer;
+    [SerializeField] private UnityEvent OnDeath;
 
-
+    private void OnEnable() {
+        OnDeath.AddListener(EnemyKilled);
+    }
+    
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();   
@@ -18,9 +24,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator blink(){
         for(int i = 0; i < 3; i++){
-            gameObject.GetComponent<Renderer>().enabled = false;
+            _enemyRenderer.enabled = false;
             yield return new WaitForSeconds(0.1f);
-            gameObject.GetComponent<Renderer>().enabled = true;
+            _enemyRenderer.enabled = true;
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -47,13 +53,25 @@ public class Enemy : MonoBehaviour
     private void EnemyTakeDamage() {
         if(attack.lightMelee == true){
             _enemyHealth.DmgUnit(attack.LightMeleeDamage);
+            Debug.Log(_enemyHealth.Health);
         }else{
             _enemyHealth.DmgUnit(attack.HeavyMeleeDamage);
         }
 
         if(_enemyHealth.Health <= 0){
-            Destroy(gameObject);
+            OnDeath?.Invoke();
         }
         
+    }
+
+    
+
+    private void EnemyKilled(){
+        Debug.Log("Enemy Killed");
+        Destroy(gameObject);
+    }
+
+    private void OnDisable() {
+        OnDeath?.RemoveListener(EnemyKilled);
     }
 }

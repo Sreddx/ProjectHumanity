@@ -73,7 +73,7 @@ public class MeleeAttack : MonoBehaviour
         {
             if(hit.transform.TryGetComponent<Enemy>(out Enemy ts)){
                 ts.GetHit(ray.direction);
-                //Debug.Log("Hit");
+                Debug.Log("Hit");
             }
         }
     }
