@@ -42,6 +42,7 @@ public class EnemyMaster : MonoBehaviour
         //First we check distance from the player 
         _currentDistance = Vector3.Distance(_player.transform.position, transform.position);
         _animator.SetFloat("distanceFromPlayer", _currentDistance);
+        Debug.Log(_animator.GetBool("isPlayerVisible"));
 
         //Then we check for visibility
         _checkDirection = _player.transform.position - transform.position;
