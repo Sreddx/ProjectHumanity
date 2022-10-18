@@ -269,7 +269,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784911, y: 1}
+    m_SensorSize: {x: 2.3043475, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -373,11 +373,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656e5266f8a7c564da7f859e0eb0881c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: {fileID: 1353731487}
-  player: {fileID: 722856673}
-  playerObj: {fileID: 1908971193}
+  _orientation: {fileID: 1353731487}
+  _player: {fileID: 722856673}
+  _playerObj: {fileID: 1908971193}
   rb: {fileID: 722856672}
-  roationSpeed: 7
+  _rotationSpeed: 10
 --- !u!114 &125830295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784911, y: 1}
+    m_SensorSize: {x: 2.3043475, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1686,7 +1686,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784911, y: 1}
+    m_SensorSize: {x: 2.3043475, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1959,7 +1959,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784911, y: 1}
+    m_SensorSize: {x: 2.3043475, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3341,6 +3341,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 794764219}
+    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _orientation
+      value: 
+      objectReference: {fileID: 1353731487}
     - target: {fileID: 5027490478255137660, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: m_RootOrder
       value: 4
