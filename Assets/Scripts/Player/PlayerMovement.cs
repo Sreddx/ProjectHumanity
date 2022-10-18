@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    [SerializeField] private Animator _animator;
+
+
     public MovementState state;
 
     public enum MovementState
@@ -109,9 +112,11 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetKey(sprintKey)){
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
+                _animator.SetBool("Walking", true);
             }
             else{
                 state = MovementState.walking;
+                _animator.SetBool("Walking", false);
                 moveSpeed = walkSpeed;
             }
         }else if(wallrunning){

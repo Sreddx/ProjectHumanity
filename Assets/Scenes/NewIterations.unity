@@ -477,7 +477,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144654297}
-  m_LocalRotation: {x: -0.2778245, y: -0.000000015932837, z: 0.0000000063042567, w: 0.9606319}
+  m_LocalRotation: {x: -0.2778245, y: -0.000000015932983, z: 0.000000006304315, w: 0.9606319}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1800,7 +1800,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794764216}
-  m_LocalRotation: {x: 0.047631983, y: -0.0000000021737416, z: 1.01208715e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631983, y: -0.000000002173898, z: 1.01238705e-10, w: 0.99886495}
   m_LocalPosition: {x: -0.9605756, y: -1.458086, z: -5.0359497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1911,7 +1911,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807201829}
-  m_LocalRotation: {x: -0.23432596, y: 0.0000000025102391, z: -0.00000000112755, w: 0.97215813}
+  m_LocalRotation: {x: -0.23432596, y: -0.000000029852167, z: 0.000000013395791, w: 0.97215813}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2021,6 +2021,11 @@ Transform:
 --- !u!4 &964380166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5748731469935326478, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+  m_PrefabInstance: {fileID: 5027490478977419677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &964380169 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2399744677945153652, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
   m_PrefabInstance: {fileID: 5027490478977419677}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018644592
@@ -3883,6 +3888,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137663, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 964380169}
     - target: {fileID: 5027490479777980198, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: m_Enabled
       value: 0
