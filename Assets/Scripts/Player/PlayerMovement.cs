@@ -114,14 +114,19 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.idle;
                 moveSpeed = 0;
                 _animator.SetBool("Walking", false);
+                _animator.SetBool("Sprinting", false);
+
             }
-            else if(Input.GetKey(sprintKey)){
+            else if(Input.GetKey(sprintKey) && !(horizontalInput == 0 && verticalInput == 0)){
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
+                _animator.SetBool("Sprinting", true);
+                _animator.SetBool("Walking", true);
             }
             else{
                 state = MovementState.walking;
                 _animator.SetBool("Walking", true);
+                _animator.SetBool("Sprinting", false);
                 moveSpeed = walkSpeed;
             }
         }else if(wallrunning){
