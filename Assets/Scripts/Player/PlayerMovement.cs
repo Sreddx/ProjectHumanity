@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     public enum MovementState
     {
+        idle,
         freeze,
         walking,
         sprinting,
@@ -109,14 +110,18 @@ public class PlayerMovement : MonoBehaviour
 
         
         if(grounded){
-            if(Input.GetKey(sprintKey)){
+            if (horizontalInput == 0 && verticalInput == 0){
+                state = MovementState.idle;
+                moveSpeed = 0;
+                _animator.SetBool("Walking", false);
+            }
+            else if(Input.GetKey(sprintKey)){
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
-                _animator.SetBool("Walking", true);
             }
             else{
                 state = MovementState.walking;
-                _animator.SetBool("Walking", false);
+                _animator.SetBool("Walking", true);
                 moveSpeed = walkSpeed;
             }
         }else if(wallrunning){
