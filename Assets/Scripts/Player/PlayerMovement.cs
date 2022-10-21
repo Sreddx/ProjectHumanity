@@ -94,8 +94,10 @@ public class PlayerMovement : MonoBehaviour
         //when to jump
         if(Input.GetKey(jumpKey) && readyToJump && grounded){
             readyToJump = false;
+            _animator.SetBool("Jumping", true);
             Jump();
             Invoke("ResetJump", jumpCooldown);
+           
         }
     }
 
@@ -182,6 +184,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResetJump(){
         readyToJump = true;
+        _animator.SetBool("Jumping", false);
+
     }
 
 
