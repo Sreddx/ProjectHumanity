@@ -11,7 +11,6 @@ public class EnemyMaster : MonoBehaviour
     [SerializeField] private Animator _animator;
     private Ray ray;
     private RaycastHit hit;
-    [SerializeField] private float _maxDistanceToCheck = 6.0f;
     private float _currentDistance;
     private Vector3 _checkDirection;
 
