@@ -32,21 +32,15 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
-    public float playerHeight;
+    [SerializeField] private GameObject playerObj;
     public LayerMask Ground;
     bool grounded;
-
-
-    [SerializeField] private GameObject playerObj;
     CapsuleCollider _capsuleCollider = null;
-    [Header("Ground Check 2.0")]
-    [SerializeField] bool _playerIsGrounded;
     [SerializeField] [Range(0.0f, 1.0f)] float _groundCheckRadiusMultiplier = 0.9f;
     [SerializeField] [Range(-0.95f, 1.05f)] float _groundCheckDistance = 0.05f;
     RaycastHit _groundCheckHit = new RaycastHit();
 
     public Transform orientation;
-    [Header("PlayerObj")]
     
 
 
@@ -83,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
-        //Check ground with raycast
-        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
         grounded = PlayerGroundCheck();
         //Movement checkers and inputs
         MyInput();
@@ -112,12 +104,8 @@ public class PlayerMovement : MonoBehaviour
         // Check inputs
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        //when to jump
-        // if(Input.GetKey(jumpKey) && readyToJump && grounded){
-        //     readyToJump = false;
-        //     Jump();
-        //     Invoke("ResetJump", jumpCooldown);
-        // }
+       
+       //Jump checks
         if(grounded){
             _lastGroundedTime = Time.time;
         }
