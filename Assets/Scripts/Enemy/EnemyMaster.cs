@@ -42,19 +42,9 @@ public class EnemyMaster : MonoBehaviour
         //First we check distance from the player 
         _currentDistance = Vector3.Distance(_player.transform.position, transform.position);
         _animator.SetFloat("distanceFromPlayer", _currentDistance);
+        
 
-        //Then we check for visibility
-        _checkDirection = _player.transform.position - transform.position;
-        ray = new Ray(transform.position, _checkDirection);
-        if (Physics.Raycast(ray, out hit, _maxDistanceToCheck)) {
-            if(hit.collider.gameObject == _player){
-                _animator.SetBool("isPlayerVisible", true);
-            } else {
-                _animator.SetBool("isPlayerVisible", false);
-            }
-        } else {
-            _animator.SetBool("isPlayerVisible", false);
-        }
+        
 
         //Lastly, we get the distance to the next waypoint target
         _distanceFromTarget = Vector3.Distance(_waypoints[_currentTarget].position, transform.position);
@@ -73,8 +63,10 @@ public class EnemyMaster : MonoBehaviour
         _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);
     }
 
+
     public void ChasePlayer() {
         _navMeshAgent.SetDestination(_player.transform.position);
+        Debug.Log("Chasing player");
     }
 
 }

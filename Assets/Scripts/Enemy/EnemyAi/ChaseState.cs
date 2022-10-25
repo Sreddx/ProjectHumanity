@@ -9,6 +9,7 @@ public class ChaseState : StateMachineBehaviour
     {
        EnemyMaster enemyMaster = animator.GetComponent<EnemyMaster>();
        enemyMaster.ChasePlayer();
+       animator.SetBool("chasingPlayer", true);
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,7 +21,7 @@ public class ChaseState : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+       animator.SetBool("chasingPlayer", true);
     }
 
     
