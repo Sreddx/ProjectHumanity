@@ -88,14 +88,16 @@ MonoBehaviour:
   wallRunSpeed: 8.5
   groundDrag: 5
   jumpForce: 14
-  jumpCooldown: 0.25
   airMultiplier: 0.1
+  _jumpButtonGracePeriod: 0
   jumpKey: 32
   sprintKey: 304
-  playerHeight: 2
+  playerObj: {fileID: 5027490479777980197}
   Ground:
     serializedVersion: 2
     m_Bits: 1024
+  _groundCheckRadiusMultiplier: 0.9
+  _groundCheckDistance: 0.05
   orientation: {fileID: 5027490480329049090}
   state: 0
   wallrunning: 0
