@@ -41,10 +41,12 @@ public class Perspective : Sense
                     //Check the aspect
                     if (aspect.aspectType != aspectName)
                     {
-                        Debug.Log("Player Detected");
+                        _animator.SetBool("isPlayerVisible", true);
                     }
                 }
             }
+        }else{
+                _animator.SetBool("isPlayerVisible", false);
         }
     }
 
