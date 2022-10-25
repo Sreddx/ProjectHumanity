@@ -13,10 +13,19 @@ public class PlayerMovement : MonoBehaviour
 
     public float groundDrag;
 
+    //Jumping vars
+    [Header("Jumping")]
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump=true;
+
+    //NewJumpSystem
+    
+    [SerializeField] private float _jumpButtonGracePeriod;
+    private float? _lastGroundedTime;
+    private float? _jumpButtonPressedTime;
+
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -88,11 +97,27 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         //when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded){
-            readyToJump = false;
-            Jump();
-            Invoke("ResetJump", jumpCooldown);
+        // if(Input.GetKey(jumpKey) && readyToJump && grounded){
+        //     readyToJump = false;
+        //     Jump();
+        //     Invoke("ResetJump", jumpCooldown);
+        // }
+        if(grounded){
+            _lastGroundedTime = Time.time;
         }
+        if(Input.GetKeyDown(jumpKey)){
+            _jumpButtonPressedTime = Time.time;
+        }
+
+        if (Time.time - _lastGroundedTime <= _jumpButtonGracePeriod ){
+
+            if (Time.time - _jumpButtonPressedTime <= _jumpButtonGracePeriod){
+                _jumpButtonPressedTime = null;
+                _lastGroundedTime = null;
+                Jump();
+            }
+        }
+
     }
 
     //State handler
