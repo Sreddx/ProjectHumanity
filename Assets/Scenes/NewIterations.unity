@@ -269,7 +269,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 1.7778801, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 1.7778801, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1599,32 +1599,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5027490478255137660, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
   m_PrefabInstance: {fileID: 5027490478977419677}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &722856683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722856671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4d845dfac29454d9dc9417cba9aee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!136 &722856684
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722856671}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.72232366
-  m_Height: 2.4038343
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.119921684, z: 0.007193327}
 --- !u!114 &722856685 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5027490478255137659, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
@@ -1906,7 +1880,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 1.7778801, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2043,6 +2017,7 @@ GameObject:
   - component: {fileID: 1018644597}
   - component: {fileID: 1018644596}
   - component: {fileID: 1018644595}
+  - component: {fileID: 1018644599}
   m_Layer: 0
   m_Name: PatrolBot
   m_TagString: Enemy
@@ -2160,6 +2135,24 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1018644599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018644592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b486f8b2b7b9347a7ed2b1e96856d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableDebug: 1
+  aspectName: 1
+  detectionRate: 1
+  fieldOfView: 45
+  viewDistance: 100
+  _animator: {fileID: 1018644596}
 --- !u!1 &1066306759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2431,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787234, y: 1}
+    m_SensorSize: {x: 1.7778801, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3817,66 +3810,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 794764219}
-    - target: {fileID: 5027490478255137656, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _grapplingCd
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137656, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: overshootYAxis
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137656, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _grappleDelayTime
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137656, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _maxGrappleDistance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _orientation
-      value: 
-      objectReference: {fileID: 1353731487}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _wallRunForce
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _minJumpHeight
-      value: 2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _maxWallRunTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _wallJumpUpForce
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _wallLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _wallCheckDistance
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _wallJumpSideForce
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137657, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _groundLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137659, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _heavyDamage
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5027490478255137659, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: _lightDamage
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5027490478255137660, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: m_RootOrder
       value: 2
