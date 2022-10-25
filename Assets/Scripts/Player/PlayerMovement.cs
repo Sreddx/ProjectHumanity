@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
+
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -16,9 +18,7 @@ public class PlayerMovement : MonoBehaviour
     //Jumping vars
     [Header("Jumping")]
     public float jumpForce;
-    public float jumpCooldown;
     public float airMultiplier;
-    bool readyToJump=true;
 
     //NewJumpSystem
     
@@ -36,8 +36,20 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask Ground;
     bool grounded;
 
+
+    [SerializeField] private GameObject playerObj;
+    CapsuleCollider _capsuleCollider = null;
+    [Header("Ground Check 2.0")]
+    [SerializeField] bool _playerIsGrounded;
+    [SerializeField] [Range(0.0f, 1.0f)] float _groundCheckRadiusMultiplier = 0.9f;
+    [SerializeField] [Range(-0.95f, 1.05f)] float _groundCheckDistance = 0.05f;
+    RaycastHit _groundCheckHit = new RaycastHit();
+
     public Transform orientation;
+    [Header("PlayerObj")]
     
+
+
     float horizontalInput;
     float verticalInput;
 
@@ -60,16 +72,20 @@ public class PlayerMovement : MonoBehaviour
     public bool freeze;
     public bool activeGrapple;
 
+    private void Awake() {
+        rb = GetComponent<Rigidbody>();
+        _capsuleCollider = playerObj.GetComponent<CapsuleCollider>();
+    }
+
     // Control
     private void Start() {
-        rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
 
     private void Update() {
         //Check ground with raycast
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
-        
+        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+        grounded = PlayerGroundCheck();
         //Movement checkers and inputs
         MyInput();
         SpeedControler();
@@ -175,11 +191,6 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void OnDrawGizmos() {
-        // draw ground check ray
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
-    }
 
     //Jump Section
     private void Jump(){
@@ -190,8 +201,12 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
-    private void ResetJump(){
-        readyToJump = true;
+    private bool PlayerGroundCheck(){
+        float sphereCastRadius = _capsuleCollider.radius * _groundCheckRadiusMultiplier;
+        float sphereCastTravelDistance = _capsuleCollider.height * 0.5f - sphereCastRadius + _groundCheckDistance;
+        
+
+        return Physics.SphereCast(rb.position, sphereCastRadius, Vector3.down, out _groundCheckHit, sphereCastTravelDistance);
     }
 
 
@@ -246,6 +261,10 @@ public class PlayerMovement : MonoBehaviour
             + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
 
         return velocityXZ + velocityY;
+    }
+    private void OnDrawGizmos() {
+        // draw ground check ray
+        
     }
 
 }
