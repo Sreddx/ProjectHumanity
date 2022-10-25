@@ -87,7 +87,7 @@ MonoBehaviour:
   sprintSpeed: 15
   wallRunSpeed: 8.5
   groundDrag: 5
-  jumpForce: 14
+  jumpForce: 9
   airMultiplier: 0.1
   _jumpButtonGracePeriod: 0
   jumpKey: 32
@@ -126,8 +126,8 @@ MonoBehaviour:
   _wallJumpUpForce: 12
   _wallJumpSideForce: 12
   _wallCheckDistance: 0.6
-  _minJumpHeight: 2.6
-  _exitWallTime: 0
+  _minJumpHeight: 2.5
+  _exitWallTime: 0.2
   _orientation: {fileID: 5027490480329049090}
 --- !u!114 &5027490478255137656
 MonoBehaviour:
@@ -149,8 +149,8 @@ MonoBehaviour:
   lr: {fileID: 5027490479969435202}
   _maxGrappleDistance: 30
   _grappleDelayTime: 0.25
-  _overshootYAxis: 0
-  _grapplingCd: 5
+  _overshootYAxis: 1
+  _grapplingCd: 1
   grappleKey: 324
 --- !u!114 &5027490478255137659
 MonoBehaviour:
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 100
   Knockback: 250
-  _lightDamage: 15
+  _lightDamage: 10
   _heavyDamage: 25
   lightMelee: 0
   heavyMelee: 0
