@@ -115,7 +115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wallLayer:
     serializedVersion: 2
-
     m_Bits: 512
   _groundLayer:
     serializedVersion: 2
@@ -128,7 +127,6 @@ MonoBehaviour:
   _minJumpHeight: 2.6
   _exitWallTime: 0
   _orientation: {fileID: 5027490480329049090}
-
 --- !u!114 &5027490478255137656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,12 +145,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   lr: {fileID: 5027490479969435202}
-
   _maxGrappleDistance: 30
   _grappleDelayTime: 0.25
   _overshootYAxis: 0
   _grapplingCd: 5
-
   grappleKey: 324
 --- !u!114 &5027490478255137659
 MonoBehaviour:
@@ -168,15 +164,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 100
   Knockback: 250
-
-  _lightDamage: 10
-  _heavyDamage: 15
-
+  _lightDamage: 15
+  _heavyDamage: 25
   lightMelee: 0
   heavyMelee: 0
   orientation: {fileID: 5027490480329049091}
-  Enemy: {fileID: 6341957304623986356, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
-
+  Enemy: {fileID: 0}
 --- !u!136 &722856684
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -216,8 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspectType: 0
-
-
 --- !u!1 &5027490478279056915
 GameObject:
   m_ObjectHideFlags: 0
