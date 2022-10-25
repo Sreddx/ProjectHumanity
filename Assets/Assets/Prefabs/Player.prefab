@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5027490478255137602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 48.80517, y: -7.9174356, z: 51.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -110,21 +110,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a8f0799d0f27f4599619e38df92e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
+  _wallLayer:
     serializedVersion: 2
-    m_Bits: 512
-  groundLayer:
+    m_Bits: 0
+  _groundLayer:
     serializedVersion: 2
-    m_Bits: 1024
-  wallRunForce: 200
-  maxWallRunTime: 1.5
-  wallJumpUpForce: 12
-  wallJumpSideForce: 12
-  jumpKey: 32
-  wallCheckDistance: 0.6
-  minJumpHeight: 2.5
-  exitWallTime: 0.2
-  orientation: {fileID: 5027490480329049090}
+    m_Bits: 0
+  _wallRunForce: 0
+  _maxWallRunTime: 0
+  _wallJumpUpForce: 0
+  _wallJumpSideForce: 0
+  _wallCheckDistance: 0
+  _minJumpHeight: 0
+  _exitWallTime: 0
+  _orientation: {fileID: 0}
 --- !u!114 &5027490478255137656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,10 +142,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   lr: {fileID: 5027490479969435202}
-  maxGrappleDistance: 30
-  grappleDelayTime: 0.25
-  overshootYAxis: 1
-  grapplingCd: 1
+  _maxGrappleDistance: 0
+  _grappleDelayTime: 0
+  _overshootYAxis: 0
+  _grapplingCd: 0
   grappleKey: 324
 --- !u!114 &5027490478255137659
 MonoBehaviour:
@@ -162,12 +161,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 100
   Knockback: 250
-  orientation: {fileID: 5027490480329049091}
-  Enemy: {fileID: 6341957304623986356, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
-  lightDamage: 10
-  heavyDamage: 25
+  _lightDamage: 0
+  _heavyDamage: 0
   lightMelee: 0
   heavyMelee: 0
+  orientation: {fileID: 5027490480329049091}
+  Enemy: {fileID: 6341957304623986356, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
 --- !u!1 &5027490478279056915
 GameObject:
   m_ObjectHideFlags: 0
