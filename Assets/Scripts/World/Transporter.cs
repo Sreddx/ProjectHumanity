@@ -17,7 +17,7 @@ public class Transporter : MonoBehaviour
     IEnumerator cargarEscena()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
      
 }
