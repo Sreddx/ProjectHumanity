@@ -51,10 +51,14 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    [SerializeField] private Animator _animator;
+
+
     public MovementState state;
 
     public enum MovementState
     {
+        idle,
         freeze,
         walking,
         sprinting,
@@ -104,13 +108,23 @@ public class PlayerMovement : MonoBehaviour
         // Check inputs
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        //when to jump
+        if(Input.GetKey(jumpKey) && readyToJump && grounded){
+            //Jump animation when walking
+            if(state == MovementState.idle || state == MovementState.walking || state == MovementState.sprinting){
+                _animator.SetTrigger("Jumping");
+            }       
        
        //Jump checks
         if(grounded){
             _lastGroundedTime = Time.time;
+            _animator.SetBool("Jumping", false);
+
         }
         if(Input.GetKeyDown(jumpKey)){
             _jumpButtonPressedTime = Time.time;
+
         }
 
         if (Time.time - _lastGroundedTime <= _jumpButtonGracePeriod ){
@@ -119,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
                 _jumpButtonPressedTime = null;
                 _lastGroundedTime = null;
                 Jump();
+                
             }
         }
 
@@ -135,12 +150,23 @@ public class PlayerMovement : MonoBehaviour
 
         
         if(grounded){
-            if(Input.GetKey(sprintKey)){
+            if (horizontalInput == 0 && verticalInput == 0){
+                state = MovementState.idle;
+                moveSpeed = 0;
+                _animator.SetBool("Walking", false);
+                _animator.SetBool("Sprinting", false);
+
+            }
+            else if(Input.GetKey(sprintKey) && !(horizontalInput == 0 && verticalInput == 0)){
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
+                _animator.SetBool("Sprinting", true);
+                _animator.SetBool("Walking", true);
             }
             else{
                 state = MovementState.walking;
+                _animator.SetBool("Walking", true);
+                _animator.SetBool("Sprinting", false);
                 moveSpeed = walkSpeed;
             }
         }else if(wallrunning){
@@ -189,12 +215,15 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
+
+   
     private bool PlayerGroundCheck(){
         float sphereCastRadius = _capsuleCollider.radius * _groundCheckRadiusMultiplier;
         float sphereCastTravelDistance = _capsuleCollider.height * 0.5f - sphereCastRadius + _groundCheckDistance;
         
 
         return Physics.SphereCast(rb.position, sphereCastRadius, Vector3.down, out _groundCheckHit, sphereCastTravelDistance);
+
     }
 
 
