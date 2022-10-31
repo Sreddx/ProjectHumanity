@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 722856683}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,18 +83,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 7
-  sprintSpeed: 15
+  sprintSpeed: 11
   wallRunSpeed: 8.5
   groundDrag: 5
   jumpForce: 20
   jumpCooldown: 1
   airMultiplier: 0.1
+  _jumpButtonGracePeriod: 0
   jumpKey: 32
   sprintKey: 304
-  playerHeight: 2
+  playerObj: {fileID: 5027490479777980197}
   Ground:
     serializedVersion: 2
     m_Bits: 1024
+  _groundCheckRadiusMultiplier: 0.9
+  _groundCheckDistance: 0.05
   orientation: {fileID: 5027490480329049090}
   _animator: {fileID: 2399744677945153652}
   state: 0
