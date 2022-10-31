@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5027490478255137657}
   - component: {fileID: 5027490478255137656}
   - component: {fileID: 5027490478255137659}
+  - component: {fileID: 722856684}
+  - component: {fileID: 722856683}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -84,8 +86,8 @@ MonoBehaviour:
   sprintSpeed: 15
   wallRunSpeed: 8.5
   groundDrag: 5
-  jumpForce: 14
-  jumpCooldown: 0.25
+  jumpForce: 20
+  jumpCooldown: 1
   airMultiplier: 0.1
   jumpKey: 32
   sprintKey: 304
@@ -94,7 +96,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 5027490480329049090}
-  _animator: {fileID: 0}
+  _animator: {fileID: 2399744677945153652}
   state: 0
   wallrunning: 0
   freeze: 0
@@ -113,18 +115,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  _wallRunForce: 0
-  _maxWallRunTime: 0
-  _wallJumpUpForce: 0
-  _wallJumpSideForce: 0
-  _wallCheckDistance: 0
-  _minJumpHeight: 0
+    m_Bits: 1024
+  _wallRunForce: 200
+  _maxWallRunTime: 1.5
+  _wallJumpUpForce: 12
+  _wallJumpSideForce: 12
+  _wallCheckDistance: 0.6
+  _minJumpHeight: 2.6
   _exitWallTime: 0
-  _orientation: {fileID: 0}
+  _orientation: {fileID: 5027490480329049090}
 --- !u!114 &5027490478255137656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,10 +145,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   lr: {fileID: 0}
-  _maxGrappleDistance: 0
-  _grappleDelayTime: 0
+  _maxGrappleDistance: 30
+  _grappleDelayTime: 0.25
   _overshootYAxis: 0
-  _grapplingCd: 0
+  _grapplingCd: 5
   grappleKey: 324
 --- !u!114 &5027490478255137659
 MonoBehaviour:
@@ -168,6 +170,32 @@ MonoBehaviour:
   heavyMelee: 0
   orientation: {fileID: 5027490480329049091}
   Enemy: {fileID: 6341957304623986356, guid: 9230d74d97932ba48b0068a4dd930286, type: 3}
+--- !u!136 &722856684
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027490478255137602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.72232366
+  m_Height: 2.4038343
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.119921684, z: 0.007193327}
+--- !u!114 &722856683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027490478255137602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4d845dfac29454d9dc9417cba9aee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5027490480329049091
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,15 +252,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.97
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -266,8 +294,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot Kyle
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+--- !u!95 &2399744677945153652 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+  m_PrefabInstance: {fileID: 773823221945540116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5748731469935326478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
