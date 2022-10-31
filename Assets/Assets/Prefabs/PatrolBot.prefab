@@ -183,9 +183,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   _animator: {fileID: 178049057671158831}
-  _pointA: {fileID: 0}
-  _pointB: {fileID: 0}
   _navMeshAgent: {fileID: 178049057671158824}
+  _waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!95 &178049057671158831
 Animator:
   serializedVersion: 4
@@ -215,7 +216,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 178049057671158827}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -225,7 +226,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 3
-  m_BaseOffset: 0
+  m_BaseOffset: 1.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &178049057671158828
