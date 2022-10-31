@@ -269,7 +269,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 2.3156216, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 2.3156216, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -477,7 +477,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144654297}
-  m_LocalRotation: {x: -0.2778245, y: -0.000000011933204, z: 0.0000000047214423, w: 0.9606319}
+  m_LocalRotation: {x: -0.2778245, y: -0.000000015932983, z: 0.000000006304315, w: 0.9606319}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1800,7 +1800,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794764216}
-  m_LocalRotation: {x: 0.047631983, y: 0.000000006040183, z: 8.3130856e-11, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631983, y: -0.0000000060401817, z: -8.315352e-11, w: 0.99886495}
   m_LocalPosition: {x: -0.9605756, y: -1.458086, z: -5.0359497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1895,7 +1895,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 2.3156216, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2418,7 +2418,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 2.3156216, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3892,6 +3892,14 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 964380169}
+    - target: {fileID: 5027490478255137663, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027490478255137663, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: jumpCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5027490479777980197, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: m_IsActive
       value: 1

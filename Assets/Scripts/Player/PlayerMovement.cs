@@ -93,8 +93,12 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
         //when to jump
         if(Input.GetKey(jumpKey) && readyToJump && grounded){
+            //Jump animation when walking
+            if(state == MovementState.idle || state == MovementState.walking || state == MovementState.sprinting){
+                _animator.SetTrigger("Jumping");
+            }
             readyToJump = false;
-            _animator.SetBool("Jumping", true);
+            
             Jump();
             Invoke("ResetJump", jumpCooldown);
            
@@ -184,6 +188,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResetJump(){
         readyToJump = true;
+       
+
         _animator.SetBool("Jumping", false);
 
     }
