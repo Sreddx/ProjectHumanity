@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6341957304623986356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.010896, y: 10.96, z: -23.13}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62,8 +62,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6341957305623703545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.9, y: -10.55, z: 0}
-  m_LocalScale: {x: 1.746, y: 2.9571, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.76, y: 2.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6341957304623986357}
@@ -162,6 +162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 5027490478255137659, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
   rb: {fileID: 6341957305623703547}
+  _enemyRenderer: {fileID: 0}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!195 &6341957305623703520
 NavMeshAgent:
   m_ObjectHideFlags: 0
