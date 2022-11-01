@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
-
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -15,35 +13,22 @@ public class PlayerMovement : MonoBehaviour
 
     public float groundDrag;
 
-    //Jumping vars
-    [Header("Jumping")]
     public float jumpForce;
+    public float jumpCooldown;
     public float airMultiplier;
-
-    //NewJumpSystem
-    
-    [SerializeField] private float _jumpButtonGracePeriod;
-    private float? _lastGroundedTime;
-    private float? _jumpButtonPressedTime;
-
+    bool readyToJump=true;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
-    [SerializeField] private GameObject playerObj;
+    public float playerHeight;
     public LayerMask Ground;
     bool grounded;
-    CapsuleCollider _capsuleCollider = null;
-    [SerializeField] [Range(0.0f, 1.0f)] float _groundCheckRadiusMultiplier = 0.9f;
-    [SerializeField] [Range(-0.95f, 1.05f)] float _groundCheckDistance = 0.05f;
-    RaycastHit _groundCheckHit = new RaycastHit();
 
     public Transform orientation;
     
-
-
     float horizontalInput;
     float verticalInput;
 
@@ -70,18 +55,16 @@ public class PlayerMovement : MonoBehaviour
     public bool freeze;
     public bool activeGrapple;
 
-    private void Awake() {
-        rb = GetComponent<Rigidbody>();
-        _capsuleCollider = playerObj.GetComponent<CapsuleCollider>();
-    }
-
     // Control
     private void Start() {
+        rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
 
     private void Update() {
-        grounded = PlayerGroundCheck();
+        //Check ground with raycast
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+        
         //Movement checkers and inputs
         MyInput();
         SpeedControler();
@@ -108,35 +91,18 @@ public class PlayerMovement : MonoBehaviour
         // Check inputs
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
         //when to jump
         if(Input.GetKey(jumpKey) && readyToJump && grounded){
             //Jump animation when walking
             if(state == MovementState.idle || state == MovementState.walking || state == MovementState.sprinting){
                 _animator.SetTrigger("Jumping");
-            }       
-       
-       //Jump checks
-        if(grounded){
-            _lastGroundedTime = Time.time;
-            _animator.SetBool("Jumping", false);
-
-        }
-        if(Input.GetKeyDown(jumpKey)){
-            _jumpButtonPressedTime = Time.time;
-
-        }
-
-        if (Time.time - _lastGroundedTime <= _jumpButtonGracePeriod ){
-
-            if (Time.time - _jumpButtonPressedTime <= _jumpButtonGracePeriod){
-                _jumpButtonPressedTime = null;
-                _lastGroundedTime = null;
-                Jump();
-                
             }
+            readyToJump = false;
+            
+            Jump();
+            Invoke("ResetJump", jumpCooldown);
+           
         }
-
     }
 
     //State handler
@@ -205,6 +171,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private void OnDrawGizmos() {
+        // draw ground check ray
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
+    }
 
     //Jump Section
     private void Jump(){
@@ -215,14 +186,11 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
+    private void ResetJump(){
+        readyToJump = true;
+       
 
-   
-    private bool PlayerGroundCheck(){
-        float sphereCastRadius = _capsuleCollider.radius * _groundCheckRadiusMultiplier;
-        float sphereCastTravelDistance = _capsuleCollider.height * 0.5f - sphereCastRadius + _groundCheckDistance;
-        
-
-        return Physics.SphereCast(rb.position, sphereCastRadius, Vector3.down, out _groundCheckHit, sphereCastTravelDistance);
+        _animator.SetBool("Jumping", false);
 
     }
 
@@ -278,10 +246,6 @@ public class PlayerMovement : MonoBehaviour
             + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
 
         return velocityXZ + velocityY;
-    }
-    private void OnDrawGizmos() {
-        // draw ground check ray
-        
     }
 
 }
