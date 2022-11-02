@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+
+    [SerializeField] Vida healthBar;
+
+    private int _maxHealth;
+    private int _currentHealth;
     
     void Start()
     {
-        
+        _maxHealth = GameManager.gameManager._playerHealth.Health;
+        _currentHealth = _maxHealth;
+        healthBar.SetMaxHealth(_maxHealth);
     }
 
     
     void Update()
     {
-        //If I press f, make the player take damage
-        // if(Input.GetKeyDown(KeyCode.F)){
-        //     playerTakeDamage(50);
-        //     Debug.Log(GameManager.gameManager._playerHealth.Health);
-        // }
         if(Input.GetKeyDown(KeyCode.H)){
             PlayerHeal(30);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
     }
     
-    
-
 
     private void OnTriggerEnter(Collider other){
         
@@ -38,9 +38,16 @@ public class PlayerStatus : MonoBehaviour
 
     private void PlayerTakeDamage(int damage) {
         GameManager.gameManager._playerHealth.DmgUnit(damage);
+        _currentHealth -= damage;
+        healthBar.SetHealth(_currentHealth);
+
     }
 
     private void PlayerHeal(int healing) {
         GameManager.gameManager._playerHealth.Heal(healing);
+        _currentHealth += healing;
+        healthBar.SetHealth(_currentHealth);
+
+
     }
 }
