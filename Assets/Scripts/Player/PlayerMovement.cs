@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = PlayerGroundCheck();
         //Movement checkers and inputs
         MyInput();
-        SpeedControler();
+        SpeedController();
         StateHandler();
     
         // Debug.Log("grounded: " + grounded);
@@ -165,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
 
-    private void SpeedControler(){
+    private void SpeedController(){
         if(activeGrapple) return;
         // control player speed
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

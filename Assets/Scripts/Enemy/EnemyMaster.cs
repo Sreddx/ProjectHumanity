@@ -15,24 +15,18 @@ public class EnemyMaster : MonoBehaviour
     private Vector3 _checkDirection;
 
     // Patrol state variables
-    public Transform _pointA;
-    public Transform _pointB;
+    
     [SerializeField] private UnityEngine.AI.NavMeshAgent _navMeshAgent;
     
     private int _currentTarget;
     private float _distanceFromTarget;
-    private Transform[] _waypoints = null;
+    [SerializeField] private Transform[] _waypoints = null;
     
 
     private void Awake() {
-        _pointA = GameObject.Find("p1").transform;
-        _pointB = GameObject.Find("p2").transform;
-        _navMeshAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        //_navMeshAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
         
-        _waypoints = new Transform[2] {
-            _pointA,
-            _pointB
-        };
+        
         _currentTarget = 0;
         _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);
     }
