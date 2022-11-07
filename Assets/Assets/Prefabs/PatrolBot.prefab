@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   _animator: {fileID: 178049057671158831}
+  _perspective: {fileID: 178049057671158828}
   _navMeshAgent: {fileID: 178049057671158824}
   _waypoints:
   - {fileID: 0}
