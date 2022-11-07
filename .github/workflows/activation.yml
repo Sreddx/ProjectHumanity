@@ -12,7 +12,7 @@ jobs:
       - uses: game-ci/unity-request-activation-file@v2
         id: getManualLicenseFile
         
-      - uses: actions/upload-artifacts@v2
+      - uses: actions/upload-artifact@v2
         with: 
           name: Manual activation file
           path: ${{ steps.getManualLicenseFile.outputs.filePath }}
