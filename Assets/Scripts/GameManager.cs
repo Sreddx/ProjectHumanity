@@ -7,9 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager { get; private set; }
     
-    //public UnitHealth _playerHealth = new UnitHealth(100,100); //CurrentHealth and MaxHealth in constructor
-    [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _enemy;
     
     //Check that there is no other instance of this class
     void Awake() {
@@ -20,14 +17,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
+    //Coroutine to reload scene after 3 seconds of player death
+    IEnumerator ReloadScene() {
+        yield return new WaitForSeconds(1.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     //Method to relaod scene
-    public void ReloadScene() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    public void ReloadSceneOnPlayerDeath() {
+        StartCoroutine(ReloadScene()); 
     }
 
 }

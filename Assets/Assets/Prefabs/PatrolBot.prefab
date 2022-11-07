@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d6cbb8b0048c49855a44ae66b9a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
+  _player: {fileID: 5027490478255137602, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
   _animator: {fileID: 178049057671158831}
   _perspective: {fileID: 178049057671158828}
   _navMeshAgent: {fileID: 178049057671158824}
