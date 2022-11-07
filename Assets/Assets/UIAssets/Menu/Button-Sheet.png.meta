@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 034f70d4e148ab548a39d74a12ccf03a
+guid: e228661216fc7554791ff99f4243eaff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75a7db7fd2ddce843829b20720ee4b04
-      internalID: 1484097195
+      spriteID: a538d4e73e6e35742a124e38e35f4c98
+      internalID: -166767187
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cc4a7c1dfeb62c409ffdd55e6299323
-      internalID: -1308982130
+      spriteID: fc3910755e8e14f4abd8f5ad08a49dfe
+      internalID: -140145020
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3639d0d4dab5214bbe37e76f3cbe74c
-      internalID: 1023957141
+      spriteID: ecf20302703e59942a7242bbb009fc31
+      internalID: -138869352
       vertices: []
       indices: 
       edges: []
@@ -181,260 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d7725492e94ef043bed01d0b5af0da2
-      internalID: 1026850459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a34e87b2547a31d43a98c561d450451d
-      internalID: 413392901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf3dfc1e6a98ecb448e0c2dfd8c1ce31
-      internalID: 704638499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee31aed63724635429e4514b19d4f740
-      internalID: 1822143110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32cfb0318364f334484a7ffc1cc79950
-      internalID: 725866570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb9100773b418594a9101f4c7f99270a
-      internalID: -1510700167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83bf844fe684d8840a5d49f263075c1d
-      internalID: 1221866288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb991a5a0e4ccea4ab690e94aa1ba63a
-      internalID: 869721102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 1320
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d9276fd1295e2046b724d4291ee7bd3
-      internalID: -978471886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c384f8d2b0f4b84cbd6a405482b2bd6
-      internalID: -2026872588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 1560
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55ded624ed2fc9946915f7f0d15f0b2d
-      internalID: -135400628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1e70c8356f2ef54d8c118b721f3d68e
-      internalID: 120195169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 120
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fffad5381a8b0294e80873106719cff4
-      internalID: 1531899810
+      spriteID: 9662364bdc35b914687caa0ae3513525
+      internalID: -1427545960
       vertices: []
       indices: 
       edges: []
@@ -442,7 +190,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: be57bc980a27ec447b6eed9e9afbe8ca
     internalID: 0
     vertices: []
     indices: 
@@ -450,22 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Button-Sheet_3: 1026850459
-      Button-Sheet_13: -135400628
-      Button-Sheet_2: 1023957141
-      Button-Sheet_5: 704638499
-      Button-Sheet_4: 413392901
-      Button-Sheet_9: 1221866288
-      Button-Sheet_14: 120195169
-      Button-Sheet_0: 1484097195
-      Button-Sheet_11: -978471886
-      Button-Sheet_8: -1510700167
-      Button-Sheet_10: 869721102
-      Button-Sheet_15: 1531899810
-      Button-Sheet_7: 725866570
-      Button-Sheet_6: 1822143110
-      Button-Sheet_1: -1308982130
-      Button-Sheet_12: -2026872588
+      Button-Sheet_3: -1427545960
+      Button-Sheet_2: -138869352
+      Button-Sheet_0: -166767187
+      Button-Sheet_1: -140145020
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
