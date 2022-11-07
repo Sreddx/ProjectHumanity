@@ -9,6 +9,7 @@ public class EnemyMaster : MonoBehaviour
     // General state machine variables
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
+    [SerializeField] Perspective _perspective;
     private Ray ray;
     private RaycastHit hit;
     private float _currentDistance;
@@ -56,10 +57,33 @@ public class EnemyMaster : MonoBehaviour
         _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);
     }
 
+    public void GoBackToPatrol(){
+        _perspective.enabled = true;
+        _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);
+    }
+    
 
-    public void ChasePlayer() {
+
+
+    public void StartChasingPlayer() {
+        
+        //Disable perspective sense and track player with raycast and if it is interrupted, stop chasing
+        _perspective.enabled = false;
+        
+    }
+
+    public void PlayerChaseCheck(){
         _navMeshAgent.SetDestination(_player.transform.position);
-        Debug.Log("Chasing player");
+        _checkDirection = _player.transform.position - transform.position;
+        ray = new Ray(transform.position, _checkDirection);
+        if (Physics.Raycast(ray, out hit, 100)) {
+            if (hit.collider.gameObject.tag == "Player") {
+                Debug.Log("Player is in sight");
+            } else {
+                Debug.Log("Player is not in sight");
+                _animator.SetBool("isPlayerVisible", false);
+            }
+        }
     }
 
 }
