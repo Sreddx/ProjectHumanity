@@ -123,8 +123,8 @@ MonoBehaviour:
     m_Bits: 1024
   _wallRunForce: 200
   _maxWallRunTime: 1.5
-  _wallJumpUpForce: 12
-  _wallJumpSideForce: 12
+  _wallJumpUpForce: 7.5
+  _wallJumpSideForce: 7.5
   _wallCheckDistance: 0.6
   _minJumpHeight: 2.5
   _exitWallTime: 0.2
