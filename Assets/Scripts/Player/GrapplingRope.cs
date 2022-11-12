@@ -57,6 +57,7 @@ public class GrapplingRope : MonoBehaviour {
                          affectCurve.Evaluate(delta);
             
             lr.SetPosition(i, Vector3.Lerp(gunTipPosition, currentGrapplePosition, delta) + offset);
+            
         }
     }
 }
