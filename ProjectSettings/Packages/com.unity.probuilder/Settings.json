@@ -191,7 +191,11 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize",
+<<<<<<< HEAD
                 "value": "{\"m_Value\":{\"x\":-0.7443318367004395,\"y\":0.7755889892578125,\"z\":0.9388046264648438}}"
+=======
+                "value": "{\"m_Value\":{\"x\":0.9226284027099609,\"y\":1.56854248046875,\"z\":7.963645935058594}}"
+>>>>>>> parent of 6b5b9ee (Merge branch 'FinalLevelBlocks')
             },
             {
                 "type": "UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
