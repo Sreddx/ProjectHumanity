@@ -37,7 +37,7 @@ public class PlayerStatus : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         
         if(other.tag == "Enemy"){
-            PlayerTakeDamage(10);
+            PlayerTakeDamage(25);
         }
 
     }
