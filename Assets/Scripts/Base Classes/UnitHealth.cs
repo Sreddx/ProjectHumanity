@@ -35,7 +35,6 @@ public class UnitHealth
         {
             _currentHealth -= damageAmount;
         }
-        //Reportar que le hicieron daño a la unidad con evento
         
     }
 
