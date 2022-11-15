@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.Events;
 
 public class Grappling : MonoBehaviour
 {
@@ -27,6 +29,8 @@ public class Grappling : MonoBehaviour
 
     public bool _grappling;
 
+    [SerializeField] private UnityEvent OnGrappling;
+
     private void Start()
     {
         pm = GetComponent<PlayerMovement>();
@@ -35,6 +39,8 @@ public class Grappling : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
+
+         
 
         if(_grapplingCdTimer > 0){
             _grapplingCdTimer -= Time.deltaTime;
@@ -45,8 +51,11 @@ public class Grappling : MonoBehaviour
         DrawRope();
     }*/
 
+
+
     private void StartGrapple()
     {
+        
         if (_grapplingCdTimer > 0) return;
 
         _grappling = true;
@@ -66,7 +75,10 @@ public class Grappling : MonoBehaviour
             _grapplePoint = cam.position + cam.forward * _maxGrappleDistance;
 
             Invoke(nameof(StopGrapple), _grappleDelayTime);
+
+           
         }
+        OnGrappling?.Invoke();
 
         //lr.enabled = true;
         //lr.SetPosition(1, _grapplePoint);
