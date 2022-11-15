@@ -25,7 +25,7 @@ public class Grappling : MonoBehaviour
     [Header("Input")]
     public KeyCode grappleKey = KeyCode.Mouse1;
 
-    private bool _grappling;
+    public bool _grappling;
 
     private void Start()
     {
@@ -41,11 +41,9 @@ public class Grappling : MonoBehaviour
         }
     }
 
-    private void LateUpdate(){
-        if (_grappling){
-            lr.SetPosition(0,gunTip.position);
-        }
-    }
+    /*private void LateUpdate(){
+        DrawRope();
+    }*/
 
     private void StartGrapple()
     {
@@ -70,9 +68,16 @@ public class Grappling : MonoBehaviour
             Invoke(nameof(StopGrapple), _grappleDelayTime);
         }
 
-        lr.enabled = true;
-        lr.SetPosition(1, _grapplePoint);
+        //lr.enabled = true;
+        //lr.SetPosition(1, _grapplePoint);
     }
+
+    /*private void DrawRope(){
+        if(_grappling){
+            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(1, _grapplePoint);
+        }
+    }*/
 
     private void ExecuteGrapple()
     {
@@ -98,8 +103,12 @@ public class Grappling : MonoBehaviour
 
         _grapplingCdTimer = _grapplingCd;
 
-        lr.enabled = false;
+        //lr.enabled = false;
     }
+
+    public Vector3 GetGrapplePoint (){
+        return _grapplePoint;
+    } 
 
 
     
