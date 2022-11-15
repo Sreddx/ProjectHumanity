@@ -13,8 +13,10 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
 
     private void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        _playerObj =  _player.GetChild(0);
+        _orientation = _player.GetChild(1);
     }
 
     private void Update() 

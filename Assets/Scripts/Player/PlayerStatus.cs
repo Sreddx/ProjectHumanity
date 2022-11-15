@@ -21,7 +21,7 @@ public class PlayerStatus : MonoBehaviour
         // if (m_onPlayerDamage == null)
         //     m_onPlayerDamage = new OnPlayerDamage();
 
-        healthBar.SetMaxHealth(_playerHealth.MaxHealth);
+        //healthBar.SetMaxHealth(_playerHealth.MaxHealth);
         // m_onPlayerDamage.AddListener(healthBar.SetHealth);
     }
 

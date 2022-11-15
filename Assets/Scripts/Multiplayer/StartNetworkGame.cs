@@ -12,12 +12,16 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkRunner _networkRunner;
     [SerializeField] private string _roomName;
     [SerializeField] private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
+    [SerializeField] private StartGameSettings _startGameSettings;
     //Para mandar a otra escena poner serialize del string
     //[SerializeField] private string _sceneName;
     
     // private void Awake() {
     //     DontDestroyOnLoad(this);
     // }
+    private void Awake() {
+        StartNewGame(_startGameSettings.GameMode);
+    }
 
 
     async void StartNewGame(GameMode mode)
