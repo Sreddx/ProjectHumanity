@@ -48,3 +48,4 @@ MonoBehaviour:
   _playerAudioClips:
   - {fileID: 8300000, guid: 6d1fb9c72e3c5b84b922b82cc96b41b9, type: 3}
   - {fileID: 8300000, guid: 2b91c0fb4291aaa488d4671c990c3a96, type: 3}
+  - {fileID: 8300000, guid: 77de6ae2c0fb6ac49a6cabd1ef7a5bf0, type: 3}
