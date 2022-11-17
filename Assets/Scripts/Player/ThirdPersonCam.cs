@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ThirdPersonCam : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] Transform _player;
     [SerializeField] Transform _playerObj;
     [SerializeField] Rigidbody rb;
+    [SerializeField] CinemachineFreeLook _freeLookCam;
 
     [SerializeField] private float _rotationSpeed;
 
@@ -20,6 +22,7 @@ public class ThirdPersonCam : MonoBehaviour
         //get child of _player that is orientation
         _orientation = _player.GetChild(1);
         rb = _player.GetComponent<Rigidbody>();
+        SetCinemachineReferences();
 
     }
 
@@ -44,5 +47,12 @@ public class ThirdPersonCam : MonoBehaviour
             // rotate _player object smoothly based on input and rotation speed
             _playerObj.forward = Vector3.Slerp(_playerObj.forward, inputDir.normalized, _rotationSpeed * Time.deltaTime);
         }
+    }
+
+    private void SetCinemachineReferences(){
+        _freeLookCam.Follow = _player;
+        _freeLookCam.LookAt = _player;
+        
+
     }
 }
