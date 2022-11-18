@@ -222,6 +222,7 @@ public class PlayerMovementAnimated : MonoBehaviour
      public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
     {
         activeGrapple = true;
+        Debug.Log("Jumping to position");
 
         velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
         Invoke(nameof(SetVelocity), 0.1f);
