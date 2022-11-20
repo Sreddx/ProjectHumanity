@@ -12,6 +12,7 @@ public class Grappling : MonoBehaviour
     public Transform gunTip;
     public LayerMask whatIsGrappleable;
     public LineRenderer lr;
+    [SerializeField] Animator _animator;
 
     [Header("Grappling")]
     [SerializeField] private float _maxGrappleDistance;
@@ -38,9 +39,14 @@ public class Grappling : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(grappleKey)) StartGrapple();
+        if (Input.GetKeyDown(grappleKey)){
+            
+            _animator.SetBool("Grappling", true);
+            StartGrapple();
+           
+            
 
-         
+        } 
 
         if(_grapplingCdTimer > 0){
             _grapplingCdTimer -= Time.deltaTime;
@@ -50,9 +56,7 @@ public class Grappling : MonoBehaviour
     /*private void LateUpdate(){
         DrawRope();
     }*/
-
-
-
+    
     private void StartGrapple()
     {
         
@@ -104,6 +108,9 @@ public class Grappling : MonoBehaviour
 
         pm.JumpToPosition(_grapplePoint, highestPointOnArc);
 
+         Debug.Log("Grappling Anim");
+        
+
         Invoke(nameof(StopGrapple), 1f);
     }
 
@@ -114,6 +121,7 @@ public class Grappling : MonoBehaviour
         _grappling = false;
 
         _grapplingCdTimer = _grapplingCd;
+        _animator.SetBool("Grappling", false);
 
         //lr.enabled = false;
     }
