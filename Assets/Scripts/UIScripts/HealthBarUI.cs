@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +27,9 @@ public class HealthBarUI : MonoBehaviour
 		fill.color = gradient.Evaluate(1f);
 	}
 
-    public void SetHealth()
+    public void SetHealth(int health)
 	{	
-		slider.value = _playerStatusHealth._playerHealth.Health;
+		slider.value = health;
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 	}
 
