@@ -25,7 +25,8 @@ public class EnemyMaster : MonoBehaviour
     
 
     private void Awake() {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        //_navMeshAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        
         
         _currentTarget = 0;
         _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);

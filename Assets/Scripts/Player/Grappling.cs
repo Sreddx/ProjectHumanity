@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using UnityEngine.Events;
 
 public class Grappling : MonoBehaviour
 {
@@ -27,9 +25,7 @@ public class Grappling : MonoBehaviour
     [Header("Input")]
     public KeyCode grappleKey = KeyCode.Mouse1;
 
-    public bool _grappling;
-
-    [SerializeField] private UnityEvent OnGrappling;
+    private bool _grappling;
 
     private void Start()
     {
@@ -40,22 +36,19 @@ public class Grappling : MonoBehaviour
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
 
-         
-
         if(_grapplingCdTimer > 0){
             _grapplingCdTimer -= Time.deltaTime;
         }
     }
 
-    /*private void LateUpdate(){
-        DrawRope();
-    }*/
-
-
+    private void LateUpdate(){
+        if (_grappling){
+            lr.SetPosition(0,gunTip.position);
+        }
+    }
 
     private void StartGrapple()
     {
-        
         if (_grapplingCdTimer > 0) return;
 
         _grappling = true;
@@ -75,21 +68,11 @@ public class Grappling : MonoBehaviour
             _grapplePoint = cam.position + cam.forward * _maxGrappleDistance;
 
             Invoke(nameof(StopGrapple), _grappleDelayTime);
-
-           
         }
-        OnGrappling?.Invoke();
 
-        //lr.enabled = true;
-        //lr.SetPosition(1, _grapplePoint);
+        lr.enabled = true;
+        lr.SetPosition(1, _grapplePoint);
     }
-
-    /*private void DrawRope(){
-        if(_grappling){
-            lr.SetPosition(0, gunTip.position);
-            lr.SetPosition(1, _grapplePoint);
-        }
-    }*/
 
     private void ExecuteGrapple()
     {
@@ -115,12 +98,8 @@ public class Grappling : MonoBehaviour
 
         _grapplingCdTimer = _grapplingCd;
 
-        //lr.enabled = false;
+        lr.enabled = false;
     }
-
-    public Vector3 GetGrapplePoint (){
-        return _grapplePoint;
-    } 
 
 
     

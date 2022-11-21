@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be1a4816b8fa148aca67fb35601521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 5027490478255137659, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+  attack: {fileID: 0}
   rb: {fileID: 178049057671158826}
   _enemyRenderer: {fileID: 178049057503452796}
   OnDeath:

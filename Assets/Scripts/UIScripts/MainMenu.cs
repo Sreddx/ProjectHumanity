@@ -12,4 +12,11 @@ public class MainMenu : MonoBehaviour
     {
          SceneManager.LoadScene(1);
     }
+
+    public void SalirDeJuego()
+    {
+        Application.Quit();
+    }
+
+
 }
