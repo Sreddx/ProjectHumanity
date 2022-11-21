@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// [System.Serializable]
+// public class OnPlayerDamage : UnityEvent<int>
+// {
+// }
 
 
 public class PlayerStatus : MonoBehaviour
@@ -11,7 +15,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] HealthBarUI healthBar;
     public UnitHealth _playerHealth = new UnitHealth(100,100); //CurrentHealth and MaxHealth in constructor
     [SerializeField] private UnityEvent OnPlayerDeath;
-    [SerializeField] private UnityEvent<int> OnPlayerDamage;
+    [SerializeField] private UnityEvent OnPlayerDamage;
     void Start()
     {
         // if (m_onPlayerDamage == null)
@@ -24,16 +28,16 @@ public class PlayerStatus : MonoBehaviour
     
     void Update()
     {
-        // if(Input.GetKeyDown(KeyCode.H)){ //Testing only
-        //     PlayerHeal(30);
-        // }
+        if(Input.GetKeyDown(KeyCode.H)){ //Testing only
+            PlayerHeal(30);
+        }
     }
     
 
     private void OnTriggerEnter(Collider other){
         
         if(other.tag == "Enemy"){
-            PlayerTakeDamage(25);
+            PlayerTakeDamage(10);
         }
 
     }
@@ -42,7 +46,7 @@ public class PlayerStatus : MonoBehaviour
         _playerHealth.DmgUnit(damage);
         //healthBar.SetHealth(_playerHealth.Health);
         //Invoke event and pass damage value
-        OnPlayerDamage?.Invoke(_playerHealth.Health);
+        OnPlayerDamage?.Invoke();
 
         
 
@@ -52,8 +56,8 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
-    // private void PlayerHeal(int healing) {
-    //     _playerHealth.Heal(healing);
-    //     //healthBar.SetHealth();
-    // }
+    private void PlayerHeal(int healing) {
+        _playerHealth.Heal(healing);
+        healthBar.SetHealth();
+    }
 }

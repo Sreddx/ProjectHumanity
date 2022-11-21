@@ -208,7 +208,7 @@ public class PlayerMovement : MonoBehaviour
         velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
         Invoke(nameof(SetVelocity), 0.1f);
 
-        //Invoke(nameof(ResetRestrictions), 3f);
+        Invoke(nameof(ResetRestrictions), 3f);
     }
 
     private Vector3 velocityToSet;
@@ -221,7 +221,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void ResetRestrictions(){
-        Debug.Log("Resetting restrictions");
         activeGrapple = false;
         
     }

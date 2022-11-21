@@ -16,10 +16,4 @@ public class AudioManager : MonoBehaviour
     public void OnPlayerDeathSound() {
         _playerAudioSource.PlayOneShot(_playerAudioClips[1]);
     }
-
-    //Play Sound for OnGrappling
-    public void OnGrapplingSound() {
-        _playerAudioSource.PlayOneShot(_playerAudioClips[2]);
-    }
-
 }
