@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-public class Grappling : MonoBehaviour
+public class GrapplingModel : MonoBehaviour
 {
      [Header("References")]
     private PlayerMovementAnimated pm;
