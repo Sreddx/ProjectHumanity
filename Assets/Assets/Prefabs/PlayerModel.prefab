@@ -1126,10 +1126,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 1.85
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.92, z: 0}
 --- !u!1 &6313603169894666987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7125000951867470621}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.933, y: 0.74, z: -2.08}
+  m_LocalPosition: {x: 1.29, y: 1.29, z: -0.3}
   m_LocalScale: {x: 0.25043, y: 0.28715, z: 0.58294}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1732,7 +1732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744386386011914224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.43, y: 0.73, z: 3.46}
+  m_LocalPosition: {x: -3.47, y: -1.71, z: 1.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1879,9 +1879,9 @@ GameObject:
   - component: {fileID: 4856337286781443089}
   - component: {fileID: 4856337286781443095}
   - component: {fileID: 4856337286781443086}
-  - component: {fileID: 4856337286781443087}
   - component: {fileID: 4856337286781443088}
   - component: {fileID: 4856337286781443091}
+  - component: {fileID: 1887558080}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Player
@@ -1914,12 +1914,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8804275345036523108}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.39
-  m_Height: 1.87
+  m_Radius: 0.5
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: -1.8, y: -0.03, z: -2.5}
+  m_Center: {x: 0, y: 1.03, z: 0}
 --- !u!54 &4856337286781443089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lr: {fileID: 795759195088174195}
-  grapplingGun: {fileID: 4856337286781443087}
+  grapplingGun: {fileID: 0}
   quality: 500
   damper: 14
   strength: 800
@@ -2076,46 +2076,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4856337286781443087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8804275345036523108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b253ba1351d17e242b152b78dc3d15d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  gunTip: {fileID: 8128066636016709226}
-  whatIsGrappleable:
-    serializedVersion: 2
-    m_Bits: 2048
-  lr: {fileID: 795759195088174195}
-  _animator: {fileID: 0}
-  _maxGrappleDistance: 30
-  _grappleDelayTime: 0.35
-  _overshootYAxis: 1
-  _grapplingCd: 1
-  grappleKey: 324
-  _grappling: 0
-  OnGrappling:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: OnGrapplingSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4856337286781443088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2162,6 +2122,34 @@ MonoBehaviour:
   wallrunning: 0
   freeze: 0
   activeGrapple: 0
+--- !u!114 &1887558080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804275345036523108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e650a0be6200743904eee255d49db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  gunTip: {fileID: 8128066636016709226}
+  whatIsGrappleable:
+    serializedVersion: 2
+    m_Bits: 2048
+  lr: {fileID: 795759195088174195}
+  _animator: {fileID: 820832708841265221}
+  _maxGrappleDistance: 30
+  _grappleDelayTime: 0.25
+  _overshootYAxis: 1
+  _grapplingCd: 1
+  grappleKey: 324
+  _grappling: 0
+  OnGrappling:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8948674454520746950
 GameObject:
   m_ObjectHideFlags: 0
