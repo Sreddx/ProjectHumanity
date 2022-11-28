@@ -12,6 +12,7 @@ public class PlayerStatus : MonoBehaviour
     public UnitHealth _playerHealth = new UnitHealth(100,100); //CurrentHealth and MaxHealth in constructor
     [SerializeField] private UnityEvent OnPlayerDeath;
     [SerializeField] private UnityEvent<int> OnPlayerDamage;
+    [SerializeField] private UnityEvent<int> OnPlayerHeal;
     void Start()
     {
         // if (m_onPlayerDamage == null)
@@ -52,8 +53,10 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
-    // private void PlayerHeal(int healing) {
-    //     _playerHealth.Heal(healing);
-    //     //healthBar.SetHealth();
-    // }
+    public void PlayerHeal(int heal){
+        _playerHealth.Heal(heal);
+        OnPlayerHeal?.Invoke(_playerHealth.Health);
+    }
+
+
 }
