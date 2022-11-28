@@ -23,6 +23,15 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
+    IEnumerator LoadNextLevel() {
+        yield return new WaitForSeconds(5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+    }
+
+    public void ElevatorNextLevel() {
+        StartCoroutine(LoadNextLevel());
+    }
+
     //Method to relaod scene
     public void ReloadSceneOnPlayerDeath() {
         StartCoroutine(ReloadScene()); 
