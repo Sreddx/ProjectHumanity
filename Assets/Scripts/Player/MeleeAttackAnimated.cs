@@ -4,70 +4,42 @@ using UnityEngine;
 
 public class MeleeAttackAnimated : MonoBehaviour
 {
-    private Animator anim;
-    public float cooldownTime = 2f;
-    private float nextFireTime = 0f;
-    public static int noOfClicks = 0;
-    float lastClickedTime = 0f;
-    float maxComboDelay = 1f;
-    
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-        
-    }
+    [SerializeField] private Animator _animator;
+    [SerializeField] private float _comboDelay = 1.2f;
 
-    
-    void Update()
-    {
-        if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit1"))
+    private int _numberOfClicks = 0;
+    private float _lastClickTime = 1.0f;
+
+
+    void Update(){
+        if(Time.time - _lastClickTime > _comboDelay)
         {
-            anim.SetBool("Hit1", false);
-        }
-        if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit2"))
-        {
-            anim.SetBool("Hit2", false);
-        }
-        if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit3"))
-        {
-            anim.SetBool("Hit3", false);
+            _numberOfClicks = 0;
+            _animator.SetBool("Idle", true);
         }
 
-        if(Time.time - lastClickedTime > maxComboDelay)
-        {
-            noOfClicks = 0;
-        }
+        if(Input.GetMouseButtonDown(0)){
+            _lastClickTime = Time.time;
+            _numberOfClicks++;
 
-        if(Time.time > nextFireTime)
-        {
-            if(Input.GetMouseButtonDown(0))
+            if(_numberOfClicks == 1)
             {
-                OnClick();
+                _animator.SetTrigger("Hit1");
+                _animator.SetBool("Idle", false);
+                _numberOfClicks = Mathf.Clamp(_numberOfClicks, 0, 3);
+            }
+            if(_numberOfClicks == 2)
+            {
+                _animator.SetTrigger("Hit2");
+                _animator.SetBool("Idle", false);
+                _numberOfClicks = Mathf.Clamp(_numberOfClicks, 0, 3);
+            }
+            if(_numberOfClicks == 3)
+            {
+                _animator.SetTrigger("Hit3");
+                _animator.SetBool("Idle", false);
+                _numberOfClicks = Mathf.Clamp(_numberOfClicks, 0, 3);
             }
         }
-    }
-
-
-    void OnClick()
-    {
-        lastClickedTime = Time.time;
-        noOfClicks++;
-        if (noOfClicks == 1)
-        {
-            anim.SetBool("Hit1", true);
-        }
-        noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
-
-        if(noOfClicks >=2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit1"))
-        {
-            anim.SetBool("Hit1", false);
-            anim.SetBool("Hit2", true);
-        }
-        if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit2"))
-        {
-            anim.SetBool("Hit2", false);
-            anim.SetBool("Hit3", true);
-        }
-
     }
 }
