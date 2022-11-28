@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadNextLevel() {
         yield return new WaitForSeconds(5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex+1);
     }
 
     public void ElevatorNextLevel() {
