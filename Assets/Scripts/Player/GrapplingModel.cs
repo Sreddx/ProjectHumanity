@@ -4,10 +4,10 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-public class Grappling : MonoBehaviour
+public class GrapplingModel : MonoBehaviour
 {
      [Header("References")]
-    private PlayerMovement pm;
+    private PlayerMovementAnimated pm;
     public Transform cam;
     public Transform gunTip;
     public LayerMask whatIsGrappleable;
@@ -34,7 +34,7 @@ public class Grappling : MonoBehaviour
 
     private void Start()
     {
-        pm = GetComponent<PlayerMovement>();
+        pm = GetComponent<PlayerMovementAnimated>();
     }
 
     private void Update()
@@ -42,6 +42,7 @@ public class Grappling : MonoBehaviour
         if (Input.GetKeyDown(grappleKey)){
             
             _animator.SetBool("Grappling", true);
+            //Call StartGrapple() function
             StartGrapple();
            
             
