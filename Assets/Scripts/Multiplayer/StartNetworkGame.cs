@@ -13,6 +13,9 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private string _roomName;
     [SerializeField] private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
     [SerializeField] private StartGameSettings _startGameSettings;
+    [Header("Keybinds")]
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
     //Para mandar a otra escena poner serialize del string
     //[SerializeField] private string _sceneName;
     
@@ -63,6 +66,19 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     }
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
+        var data = new NetworkInputData();
+
+        data.HorizontalInput = Input.GetAxisRaw("Horizontal");
+        data.VerticalInput = Input.GetAxisRaw("Vertical");
+        data.Jump = Input.GetKey(jumpKey);
+        data.Sprint = Input.GetKey(sprintKey);
+        // Debug.Log("---------------Input--------------");
+        // Debug.Log(data.HorizontalInput);
+        // Debug.Log(data.VerticalInput);
+        // Debug.Log(data.Jump);
+        // Debug.Log(data.Sprint);
+
+        input.Set(data);
     }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
     {

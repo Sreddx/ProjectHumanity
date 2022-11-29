@@ -10,16 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5027490478255137660}
   - component: {fileID: 5027490478255137661}
+  - component: {fileID: 5919138329533614969}
   - component: {fileID: 5027490478255137662}
-  - component: {fileID: 5027490478255137663}
   - component: {fileID: 5027490478255137657}
   - component: {fileID: 5027490478255137656}
   - component: {fileID: 5027490478255137659}
   - component: {fileID: 722856684}
-  - component: {fileID: 722856683}
   - component: {fileID: 722856690}
   - component: {fileID: 7712278175701485816}
-  - component: {fileID: 7128183049681022215}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Player
@@ -35,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5027490478255137602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.393658, y: 1.5569077, z: 191}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60,6 +58,37 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 32
   m_CollisionDetection: 1
+--- !u!114 &5919138329533614969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027490478255137602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50a5f5ef57e6f14fa2dbddf29578300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  walkSpeed: 7
+  sprintSpeed: 11
+  wallRunSpeed: 8.5
+  groundDrag: 5
+  jumpForce: 9
+  airMultiplier: 0.1
+  _jumpButtonGracePeriod: 0
+  playerObj: {fileID: 5027490479777980197}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 1024
+  _groundCheckRadiusMultiplier: 0.9
+  _groundCheckDistance: 0.05
+  orientation: {fileID: 5027490480329049090}
+  state: 0
+  wallrunning: 0
+  freeze: 0
+  activeGrapple: 0
 --- !u!114 &5027490478255137662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,38 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityScale: 2.5
---- !u!114 &5027490478255137663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5027490478255137602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a46797dd25237c24bbf505fd97337d7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 7
-  sprintSpeed: 11
-  wallRunSpeed: 8.5
-  groundDrag: 5
-  jumpForce: 9
-  airMultiplier: 0.1
-  _jumpButtonGracePeriod: 0
-  jumpKey: 32
-  sprintKey: 304
-  playerObj: {fileID: 5027490479777980197}
-  Ground:
-    serializedVersion: 2
-    m_Bits: 1024
-  _groundCheckRadiusMultiplier: 0.9
-  _groundCheckDistance: 0.05
-  orientation: {fileID: 5027490480329049090}
-  state: 0
-  wallrunning: 0
-  freeze: 0
-  activeGrapple: 0
 --- !u!114 &5027490478255137657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +151,10 @@ MonoBehaviour:
   _overshootYAxis: 1
   _grapplingCd: 1
   grappleKey: 324
+  _grappling: 0
+  OnGrappling:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5027490478255137659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,37 +189,6 @@ CapsuleCollider:
   m_Height: 2.4038343
   m_Direction: 1
   m_Center: {x: 0, y: 0.119921684, z: 0.007193327}
---- !u!114 &722856683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5027490478255137602}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4d845dfac29454d9dc9417cba9aee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  OnPlayerDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReloadScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnPlayerDamage:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &722856690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,20 +223,9 @@ MonoBehaviour:
   NetworkGuid:
     RawGuidValue: 669a788df9295b84baa3bf921e6b7cd1
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 5919138329533614969}
   SimulationBehaviours: []
---- !u!114 &7128183049681022215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5027490478255137602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6afbfd21c901246a6b3797cbec4d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5027490478279056915
 GameObject:
   m_ObjectHideFlags: 0
