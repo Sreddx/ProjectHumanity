@@ -186,7 +186,6 @@ public class PlayerMovementMultiplayer : NetworkBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         if (grounded)
         {
-            Debug.Log(moveDirection);
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }else if(!grounded){
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
