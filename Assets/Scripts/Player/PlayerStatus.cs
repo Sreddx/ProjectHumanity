@@ -39,7 +39,7 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
-    private void PlayerTakeDamage(int damage) {
+    public void PlayerTakeDamage(int damage) {
         _playerHealth.DmgUnit(damage);
         //healthBar.SetHealth(_playerHealth.Health);
         //Invoke event and pass damage value
