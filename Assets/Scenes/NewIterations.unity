@@ -305,6 +305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33ef8a0785e806a4bb4d06b41f1c916d, type: 3}
+--- !u!82 &186561706 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2040823605, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+  m_PrefabInstance: {fileID: 1545893133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260416452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,7 +2505,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5027490479777980197, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8123480106310379682, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
 --- !u!1 &1660514479
 GameObject:
@@ -3320,7 +3354,7 @@ PrefabInstance:
     - target: {fileID: 5880019035655119405, guid: 2ebdbf5b71961a944b636b9b4c9027f4, type: 3}
       propertyPath: _playerAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 186561706}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ebdbf5b71961a944b636b9b4c9027f4, type: 3}
 --- !u!1001 &5890639636430332351
