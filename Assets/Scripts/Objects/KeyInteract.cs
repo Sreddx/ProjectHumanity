@@ -9,16 +9,11 @@ public class KeyInteract : MonoBehaviour
     private bool playerInRange;
     
 
-    private void Awake()
-    {
-      
-    }
-
     private void Update()
     {
         if (playerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Inventory.keys[llaveUsada.GetComponent<Key>().index] = true;
               
