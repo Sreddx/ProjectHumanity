@@ -1882,6 +1882,7 @@ GameObject:
   - component: {fileID: 4856337286781443088}
   - component: {fileID: 4856337286781443091}
   - component: {fileID: 1887558080}
+  - component: {fileID: 2017083472}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Player
@@ -1898,7 +1899,7 @@ Transform:
   m_GameObject: {fileID: 8804275345036523108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7344857787682649407}
@@ -2045,7 +2046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lr: {fileID: 795759195088174195}
-  grapplingGun: {fileID: 0}
+  grapplingGun: {fileID: 1887558080}
   quality: 500
   damper: 14
   strength: 800
@@ -2114,7 +2115,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 1024
-  _groundCheckRadiusMultiplier: 0.9
+  _groundCheckRadiusMultiplier: 0.093
   _groundCheckDistance: 0.05
   orientation: {fileID: 1753439133036916329}
   _animator: {fileID: 820832708841265221}
@@ -2150,6 +2151,20 @@ MonoBehaviour:
   OnGrappling:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2017083472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804275345036523108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc32fabbda9ef6a4fa1ead9a2a36b7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 820832708841265221}
+  _comboDelay: 1.2
 --- !u!1 &8948674454520746950
 GameObject:
   m_ObjectHideFlags: 0
