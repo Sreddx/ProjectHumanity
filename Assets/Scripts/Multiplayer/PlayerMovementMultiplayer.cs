@@ -101,19 +101,26 @@ public class PlayerMovementMultiplayer : NetworkBehaviour
         //MyInput();
         SpeedController();
         StateHandler();
-
+        if(grounded){
+            _lastGroundedTime = Time.time;
+        }
 
         if(GetInput(out NetworkInputData input)){
             horizontalInput = input.HorizontalInput;
             verticalInput = input.VerticalInput;
             MovePlayer();
             if(input.Jump){
+                _jumpButtonPressedTime = Time.time;
+            }
+            if (Time.time - _lastGroundedTime <= _jumpButtonGracePeriod ){
+
+            if (Time.time - _jumpButtonPressedTime <= _jumpButtonGracePeriod){
+                _jumpButtonPressedTime = null;
+                _lastGroundedTime = null;
                 Jump();
             }
+            }
         }
-        
-
-        
     }
 
     //Inputs and logic of movement
