@@ -21,8 +21,9 @@ public class ObjectsSpawnController : MonoBehaviour
         Vector3 spawnPos = transform.position;
         NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPos, Quaternion.identity, player);
         _spawnedCharacters.Add(player, networkPlayerObject);
-        // SpawnCam(runner, networkPlayerObject);
         
+        networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>().SpawnedPlayers.Add(player, networkPlayerObject);
+        networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>().CurrentPlayerRef = player;
         
     }
     public void SpawnCam(NetworkRunner runner, NetworkObject player)
