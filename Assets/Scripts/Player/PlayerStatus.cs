@@ -9,7 +9,7 @@ public class PlayerStatus : MonoBehaviour
 {
 
     [SerializeField] HealthBarUI healthBar;
-    public UnitHealth _playerHealth = new UnitHealth(100,100); //CurrentHealth and MaxHealth in constructor
+    public UnitHealth _playerHealth = new UnitHealth(200,200); //CurrentHealth and MaxHealth in constructor
     [SerializeField] private UnityEvent OnPlayerDeath;
     [SerializeField] private UnityEvent<int> OnPlayerDamage;
     [SerializeField] private UnityEvent<int> OnPlayerHeal;

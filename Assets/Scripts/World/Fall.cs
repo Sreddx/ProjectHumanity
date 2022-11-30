@@ -16,8 +16,6 @@ public class Fall : MonoBehaviour
         {
             StartCoroutine(TPlayer());
             FallEvent?.Invoke(_fallDamage);
-            //jugador.transform.position = CheckPoint.ReachedPoint;
-            //Physics.SyncTransforms();
         }
     }
 
