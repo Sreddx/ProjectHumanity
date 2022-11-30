@@ -6,8 +6,9 @@ using UnityEngine;
 public class PromptUI : MonoBehaviour
 {
 	[SerializeField] TextMeshProUGUI promptText;
-     private bool DoorInRange;
-     private bool KeyInRange;
+    private bool Interactuable;
+    private bool DoorInRange;
+    private bool KeyInRange;
     
     private void Start()
     {
@@ -16,48 +17,56 @@ public class PromptUI : MonoBehaviour
 
     private void Update()
     {
-        if (DoorInRange)
+        if( Interactuable == true)
         {
-            promptText.text = "Press E to Interact";
-        }
-        else
-        {
-            promptText.text = " ";
-        }
+            if (DoorInRange)
+            {
+                promptText.text = "Press E to Interact";
+            }
 
-        if (KeyInRange)
-        {
-            promptText.text = "Press E to Pick Up";
+            if (KeyInRange)
+            {
+                promptText.text = "Press E to Pick Up";
+                if (Input.GetKeyDown(KeyCode.E)) 
+                {
+                    Interactuable = false;
+                }
+            } 
         }
-        else
+        else if (Interactuable == false) 
         {
             promptText.text = " ";
+            DoorInRange = false;
+            KeyInRange = false;
         }
+        
     }
-    
+
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Door")
-        {
-            DoorInRange = true;
-        }
         if (collider.gameObject.tag == "Key")
         {
             KeyInRange = true;
+            Interactuable = true;
+        }
+         if (collider.gameObject.tag == "Puerta")
+        {
+            DoorInRange = true;
+            Interactuable = true;
         }
     }
 
     private void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.tag == "Door")
-        {
-            DoorInRange = false;
-        }
           if (collider.gameObject.tag == "Key")
         {
-            KeyInRange = false;
+            Interactuable = false;
+        }
+          if (collider.gameObject.tag == "Puerta")
+        {
+            Interactuable = false;
         }
     }
 
-    
+       
 }
