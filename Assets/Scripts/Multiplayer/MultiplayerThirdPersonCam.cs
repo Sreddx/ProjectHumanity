@@ -29,24 +29,24 @@ public class MultiplayerThirdPersonCam : NetworkBehaviour
 
     public override void FixedUpdateNetwork() 
     {
-        if(_playerFound){
-            if(GetInput(out NetworkInputData input)){
-                // rotate _orientation by checking view direction of camera and rotating orientation of player towards that direction
-                Vector3 viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
-                _orientation.forward = viewDir.normalized;
+    
+        if(GetInput(out NetworkInputData input)){
+            // rotate _orientation by checking view direction of camera and rotating orientation of player towards that direction
+            Vector3 viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
+            _orientation.forward = viewDir.normalized;
 
-                // rotate _player object to face _orientation by getting inputs and calculating input dir
-                // float horizontalInput = input.HorizontalInput;
-                // float verticalInput = input.VerticalInput;
-                Vector3 inputDir = _orientation.forward * input.VerticalInput + _orientation.right * input.HorizontalInput;;
+            // rotate _player object to face _orientation by getting inputs and calculating input dir
+            // float horizontalInput = input.HorizontalInput;
+            // float verticalInput = input.VerticalInput;
+            Vector3 inputDir = _orientation.forward * input.VerticalInput + _orientation.right * input.HorizontalInput;;
 
-                if (inputDir != Vector3.zero)
-                {
-                    // rotate _player object smoothly based on input and rotation speed
-                    _playerObj.forward = Vector3.Slerp(_playerObj.forward, inputDir.normalized, _rotationSpeed * Time.deltaTime);
-                }
+            if (inputDir != Vector3.zero)
+            {
+                // rotate _player object smoothly based on input and rotation speed
+                _playerObj.forward = Vector3.Slerp(_playerObj.forward, inputDir.normalized, _rotationSpeed * Time.deltaTime);
             }
         }
+        
     }
 
     private void SetCinemachineReferences(){
@@ -58,9 +58,9 @@ public class MultiplayerThirdPersonCam : NetworkBehaviour
 
     }
 
-    public void LookForPlayer(){
+    public void LookForPlayer(Transform _playerSpawned){
         //Get Player references
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = _playerSpawned;
         //get child of _player that is the player object
         _playerObj = _player.GetChild(0);
         //get child of _player that is orientation
