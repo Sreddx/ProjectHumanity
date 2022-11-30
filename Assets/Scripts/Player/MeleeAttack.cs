@@ -12,10 +12,14 @@ public class MeleeAttack : MonoBehaviour
     [SerializeField] private int _heavyDamage;
     public bool lightMelee;
     public bool heavyMelee;
+    
+    
+    [SerializeField] Collider[] _attackHitBoxes;
+    
+
 
 
     public GameObject orientation;
-    public GameObject Enemy;
     Collider weapon;
     Transform weaponTransform; 
 
@@ -36,10 +40,7 @@ public class MeleeAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        weapon = GetComponent<Collider>();
-        weaponTransform = gameObject.transform;
-        */
+
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class MeleeAttack : MonoBehaviour
     void Action(){
         if (Input.GetKeyDown(KeyCode.Mouse0)){
             lightMelee = true;
-            ShootRayCast();
+            Punch(_attackHitBoxes[0]);
             lightMelee = false;
         }
 
@@ -78,8 +79,17 @@ public class MeleeAttack : MonoBehaviour
         }
     }
 
-    /*private void Punch(){
-        Enemy.transform.position += transform.forward * Time.deltaTime * Knockback;
-
-    }*/
+    void Punch(Collider col){
+        var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hitboxes"));
+        foreach (var c in cols)
+        {
+            if(c.tag == "Enemy"){
+                if(c.TryGetComponent<Enemy>(out Enemy ts)){
+                    ts.GetHit(transform.forward*1000000);
+                    Debug.Log("Vergazo a enemigo");
+                }
+            }
+            
+        }
+    }
 }

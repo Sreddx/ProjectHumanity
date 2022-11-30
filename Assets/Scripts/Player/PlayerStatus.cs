@@ -31,13 +31,13 @@ public class PlayerStatus : MonoBehaviour
     }
     
 
-    private void OnTriggerEnter(Collider other){
+    // private void OnTriggerEnter(Collider other){
         
-        if(other.tag == "Enemy"){
-            PlayerTakeDamage(25);
-        }
+    //     if(other.tag == "Enemy"){
+    //         PlayerTakeDamage(25);
+    //     }
 
-    }
+    // }
 
     public void PlayerTakeDamage(int damage) {
         _playerHealth.DmgUnit(damage);

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private Renderer _enemyRenderer;
     [SerializeField] private UnityEvent OnDeath;
+    [SerializeField] Collider _enemyHitbox;
 
     private void OnEnable() {
         OnDeath.AddListener(EnemyKilled);
@@ -20,6 +21,11 @@ public class Enemy : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();   
          
+    }
+    
+    void Update()
+    {
+        EnemyAttackPlayer(_enemyHitbox);   
     }
 
     IEnumerator blink(){
@@ -34,37 +40,30 @@ public class Enemy : MonoBehaviour
     public void GetHit(Vector3 direction){
 
         EnemyTakeDamage(); //Call method to take damage
-        StartCoroutine(blink()); //Call blink for visual damage feedback
-        if(attack.lightMelee == true){
-
-            Vector3 force = direction * 5 + Vector3.up * 1;
-            //Debug.Log(force);
-            rb.AddForce(force, ForceMode.Impulse);
-            this.transform.parent = null;
-
-        }else{
-            Vector3 force = direction * 2 + Vector3.up * 5;
-            //Debug.Log(force);
-            rb.AddForce(force, ForceMode.Impulse);
-            this.transform.parent = null;
-        }
         
     }
-    private void EnemyTakeDamage() {
-        if(attack.lightMelee == true){
-            _enemyHealth.DmgUnit(attack.LightMeleeDamage);
-            Debug.Log(_enemyHealth.Health);
-        }else{
-            _enemyHealth.DmgUnit(attack.HeavyMeleeDamage);
-        }
 
+
+    public void EnemyTakeDamage() {
+        StartCoroutine(blink()); 
+        _enemyHealth.DmgUnit(25);
+        Debug.Log(_enemyHealth.Health);
+       
         if(_enemyHealth.Health <= 0){
             OnDeath?.Invoke();
         }
         
     }
 
-    
+    public void EnemyAttackPlayer(Collider col){
+        var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hitboxes"));
+        foreach (var c in cols)
+        {
+            if(c.tag == "Player"){
+                Debug.Log("Hit player XD");
+            }
+        }
+    }
 
     private void EnemyKilled(){
         Debug.Log("Enemy Killed");
