@@ -7,10 +7,10 @@ public class Enemy : MonoBehaviour
 {
     
     public UnitHealth _enemyHealth = new UnitHealth(100,100); //Instantiate Unit health class for enemy health
-    public MeleeAttack attack;
     public Rigidbody rb;
     [SerializeField] private Renderer _enemyRenderer;
     [SerializeField] private UnityEvent OnDeath;
+    [SerializeField] private UnityEvent<int> OnEnemyAttacked;
     [SerializeField] Collider _enemyHitbox;
 
     private void OnEnable() {
@@ -63,10 +63,7 @@ public class Enemy : MonoBehaviour
         foreach (var c in cols)
         {
             if(c.tag == "Player"){
-                if(c.TryGetComponent<PlayerStatus>(out PlayerStatus ts)){
-                    ts.PlayerTakeDamage(15);
-                    Debug.Log("Hit player");
-                }
+                OnEnemyAttacked?.Invoke(10);
             }
         }
     }
