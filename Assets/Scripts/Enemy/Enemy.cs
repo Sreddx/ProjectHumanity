@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {
-        EnemyAttackPlayer(_enemyHitbox);   
+        //StartCoroutine(EnemyAttackPlayer(_enemyHitbox));   
     }
 
     IEnumerator blink(){
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    public void EnemyAttackPlayer(Collider col){
+    private void EnemyAttackPlayer(Collider col){
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hitboxes"));
         foreach (var c in cols)
         {
@@ -66,6 +66,10 @@ public class Enemy : MonoBehaviour
                 OnEnemyAttacked?.Invoke(10);
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        EnemyAttackPlayer(_enemyHitbox);
     }
 
     private void EnemyKilled(){
