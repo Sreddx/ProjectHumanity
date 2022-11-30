@@ -21,6 +21,7 @@ public class KeyInteract : MonoBehaviour
             }
         }
     }
+    
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Player")

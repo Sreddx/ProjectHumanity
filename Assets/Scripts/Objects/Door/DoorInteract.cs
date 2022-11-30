@@ -5,16 +5,8 @@ using UnityEngine;
 public class DoorInteract : MonoBehaviour
 {
     private bool cooldown = false;
-    //[SerializeField] GameObject needKey;
-    //[SerializeField] GameObject open;
-    //[SerializeField] GameObject close;
     [SerializeField] GameObject door;
     private bool playerInRange;
-
-    private void Awake()
-    {
-        //needKey.SetActive(false);
-    }
 
     private void Update()
     {
