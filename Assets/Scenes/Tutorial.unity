@@ -13376,7 +13376,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807201829}
-  m_LocalRotation: {x: -0.2323302, y: 0.00000017587479, z: -0.00000007936277, w: 0.972637}
+  m_LocalRotation: {x: -0.23233017, y: 0.00000020773925, z: -0.000000093741285, w: 0.97263694}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19487,6 +19487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealingOrb (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6163288929078097337, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6163288929078097340, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -19611,7 +19615,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185304406}
-  m_LocalRotation: {x: -0.18687133, y: 0.00000014929961, z: -0.00000007591173, w: 0.98238444}
+  m_LocalRotation: {x: -0.18687136, y: 0.0000001868691, z: -0.00000009501375, w: 0.9823844}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28967,6 +28971,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797894991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 44635901, guid: db3d3751586155a47bcb8ac0f1cf0ec4, type: 3}
+  m_PrefabInstance: {fileID: 461088747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1807333524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5027490479777980196, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
@@ -35586,6 +35601,10 @@ PrefabInstance:
     - target: {fileID: 6163288929078097337, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
       propertyPath: m_Name
       value: HealingOrb (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163288929078097337, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6163288929078097340, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
       propertyPath: m_RootOrder
@@ -44193,18 +44212,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 461088748}
     - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 461088748}
@@ -44228,54 +44235,10 @@ PrefabInstance:
       propertyPath: OnPlayerDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 461088748}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnPlayerGainHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReloadSceneOnPlayerDeath
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnPlayerDeathSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerDamageSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthBarUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 722856683, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
-      propertyPath: OnPlayerHeal.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+    - target: {fileID: 3923596943209848095, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
+      propertyPath: promptText
+      value: 
+      objectReference: {fileID: 1797894991}
     - target: {fileID: 5027490478255137602, guid: 62106298f9991ff44ad78ecad0b17e7e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -47411,6 +47374,10 @@ PrefabInstance:
     - target: {fileID: 6163288929078097337, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
       propertyPath: m_Name
       value: HealingOrb
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163288929078097337, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6163288929078097340, guid: 60b4c41fccf8a8b488596554213ecfbd, type: 3}
       propertyPath: m_RootOrder

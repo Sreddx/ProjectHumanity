@@ -37,7 +37,7 @@ public class PromptUI : MonoBehaviour
         {
             promptText.text = " ";
             DoorInRange = false;
-            KeyInRange = false;
+            KeyInRange = false; 
         }
         
     }
