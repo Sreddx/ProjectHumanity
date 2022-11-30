@@ -35,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5027490478255137602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.393658, y: 1.5569077, z: 191}
+  m_LocalPosition: {x: -16.87, y: -1.51, z: 1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -188,8 +188,8 @@ MonoBehaviour:
   _heavyDamage: 25
   lightMelee: 0
   heavyMelee: 0
+  _attackHitBoxes: []
   orientation: {fileID: 5027490480329049091}
-  Enemy: {fileID: 0}
 --- !u!136 &722856684
 CapsuleCollider:
   m_ObjectHideFlags: 0

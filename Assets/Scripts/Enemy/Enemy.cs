@@ -38,7 +38,10 @@ public class Enemy : MonoBehaviour
     }
 
     public void GetHit(Vector3 direction){
-
+        //Freeze transform
+        transform.position = transform.position;
+        //Add force to rigidbody
+        rb.AddForce(direction *5);
         EnemyTakeDamage(); //Call method to take damage
         
     }
@@ -60,7 +63,10 @@ public class Enemy : MonoBehaviour
         foreach (var c in cols)
         {
             if(c.tag == "Player"){
-                Debug.Log("Hit player XD");
+                if(c.TryGetComponent<PlayerStatus>(out PlayerStatus ts)){
+                    ts.PlayerTakeDamage(15);
+                    Debug.Log("Hit player");
+                }
             }
         }
     }

@@ -85,8 +85,7 @@ public class MeleeAttack : MonoBehaviour
         {
             if(c.tag == "Enemy"){
                 if(c.TryGetComponent<Enemy>(out Enemy ts)){
-                    ts.GetHit(transform.forward*1000000);
-                    Debug.Log("Vergazo a enemigo");
+                    ts.GetHit(transform.forward);
                 }
             }
             

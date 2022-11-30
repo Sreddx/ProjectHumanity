@@ -25,22 +25,16 @@ public class PlayerStatus : MonoBehaviour
     
     void Update()
     {
-        // if(Input.GetKeyDown(KeyCode.H)){ //Testing only
-        //     PlayerHeal(30);
-        // }
+
     }
     
 
-    // private void OnTriggerEnter(Collider other){
-        
-    //     if(other.tag == "Enemy"){
-    //         PlayerTakeDamage(25);
-    //     }
-
-    // }
+    
 
     public void PlayerTakeDamage(int damage) {
+        
         _playerHealth.DmgUnit(damage);
+        Debug.Log(_playerHealth.Health);
         //healthBar.SetHealth(_playerHealth.Health);
         //Invoke event and pass damage value
         OnPlayerDamage?.Invoke(_playerHealth.Health);
