@@ -13376,7 +13376,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807201829}
-  m_LocalRotation: {x: -0.23233017, y: 0.00000020773925, z: -0.000000093741285, w: 0.97263694}
+  m_LocalRotation: {x: -0.2323302, y: 0.00000017587479, z: -0.00000007936277, w: 0.972637}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19615,7 +19615,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185304406}
-  m_LocalRotation: {x: -0.18687136, y: 0.0000001868691, z: -0.00000009501375, w: 0.9823844}
+  m_LocalRotation: {x: -0.18687133, y: 0.00000014929961, z: -0.00000007591173, w: 0.98238444}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32298,7 +32298,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4616
+  m_Name: pb_Mesh-37734
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42475,6 +42475,10 @@ PrefabInstance:
       propertyPath: _elevatorOn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1757206825}
+    - target: {fileID: 605592965642843724, guid: 919ad1e40ce9f6145aada40c2509a68e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 605592965642843725, guid: 919ad1e40ce9f6145aada40c2509a68e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -47938,6 +47942,10 @@ PrefabInstance:
     - target: {fileID: 7467942917768909203, guid: 33ef8a0785e806a4bb4d06b41f1c916d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467942917768909212, guid: 33ef8a0785e806a4bb4d06b41f1c916d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7467942917768909214, guid: 33ef8a0785e806a4bb4d06b41f1c916d, type: 3}
       propertyPath: m_Name

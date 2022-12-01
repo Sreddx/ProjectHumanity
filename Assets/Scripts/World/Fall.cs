@@ -25,7 +25,7 @@ public class Fall : MonoBehaviour
     
     IEnumerator TPlayer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         _player.transform.position = CheckPoint.s_reachedPoint;
         Physics.SyncTransforms();
     }
