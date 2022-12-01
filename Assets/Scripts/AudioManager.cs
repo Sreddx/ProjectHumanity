@@ -7,10 +7,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource _playerAudioSource;
     [SerializeField] AudioClip[] _playerAudioClips;
 
-    void Start()
-    {
-         
-    }
+    
 
     //Play Sound for OnPLayerDamage
     public void OnPlayerDamageSound() {
@@ -18,7 +15,7 @@ public class AudioManager : MonoBehaviour
     }
     //Play Sound for OnPlayerDeath
     public void OnPlayerDeathSound() {
-        _playerAudioSource.PlayOneShot(_playerAudioClips[1]);
+    _playerAudioSource.PlayOneShot(_playerAudioClips[1]);
     }
     //Play Sound for OnGrappling
     public void OnGrapplingSound() {

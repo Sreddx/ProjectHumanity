@@ -7,6 +7,9 @@ public class KeyInteract : MonoBehaviour
     [SerializeField] GameObject llaveUsada;
 
     private bool playerInRange;
+
+    [SerializeField] AudioSource _playerAudioSource;
+    [SerializeField] AudioClip[] _keyAudioClips;
     
 
     private void Update()
@@ -16,7 +19,7 @@ public class KeyInteract : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Inventory.keys[llaveUsada.GetComponent<Key>().index] = true;
-              
+                _playerAudioSource.PlayOneShot(_keyAudioClips[0]);
                 llaveUsada.SetActive(false);
             }
         }

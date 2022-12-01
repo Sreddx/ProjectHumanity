@@ -160,9 +160,9 @@ MonoBehaviour:
   OnGrappling:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5880019035655119405, guid: 2ebdbf5b71961a944b636b9b4c9027f4, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: OnPlayerDamageSound
+        m_MethodName: OnGrapplingSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
