@@ -8,6 +8,9 @@ public class DoorInteract : MonoBehaviour
     [SerializeField] GameObject door;
     private bool playerInRange;
 
+    [SerializeField] AudioSource _doorAudioSource;
+    [SerializeField] AudioClip[] _doorAudioClips;
+
     private void Update()
     {
         if (playerInRange)
@@ -22,11 +25,21 @@ public class DoorInteract : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         doorOpener.ChangeDoorState();
+                        _doorAudioSource.PlayOneShot(_doorAudioClips[0]);
                          Invoke("ResetCooldown",2.0f);
                         cooldown = true;
                     }
-                }
-                
+                }    
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                    {
+                    
+                    _doorAudioSource.PlayOneShot(_doorAudioClips[1]);
+                         
+                        
+                    }
             }
         }
 

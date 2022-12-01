@@ -7,8 +7,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource _playerAudioSource;
     [SerializeField] AudioClip[] _playerAudioClips;
 
-    [SerializeField] AudioClip[] _objectsAudioClips;
-
     //Play Sound for OnPLayerDamage
     public void OnPlayerDamageSound() {
         _playerAudioSource.PlayOneShot(_playerAudioClips[0]);

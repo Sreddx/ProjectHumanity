@@ -3823,7 +3823,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104262
+  m_Name: pb_Mesh32188
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4075,7 +4075,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-126554
+  m_Name: pb_Mesh-3806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4549,7 +4549,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104844
+  m_Name: pb_Mesh32770
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4899,7 +4899,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105380
+  m_Name: pb_Mesh33308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6393,7 +6393,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104744
+  m_Name: pb_Mesh32670
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6557,7 +6557,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-127344
+  m_Name: pb_Mesh-4596
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6848,7 +6848,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104426
+  m_Name: pb_Mesh32352
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8330,7 +8330,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104276
+  m_Name: pb_Mesh32202
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8504,7 +8504,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105048
+  m_Name: pb_Mesh32976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9920,7 +9920,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104236
+  m_Name: pb_Mesh32162
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10084,7 +10084,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh106152
+  m_Name: pb_Mesh34080
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10652,7 +10652,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125914
+  m_Name: pb_Mesh-3166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11483,7 +11483,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125854
+  m_Name: pb_Mesh-3106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11647,7 +11647,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104822
+  m_Name: pb_Mesh32748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13149,7 +13149,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104598
+  m_Name: pb_Mesh32524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13886,7 +13886,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-127278
+  m_Name: pb_Mesh-4530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14170,7 +14170,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104618
+  m_Name: pb_Mesh32544
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14344,7 +14344,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104980
+  m_Name: pb_Mesh32908
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18955,7 +18955,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104900
+  m_Name: pb_Mesh32826
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19129,7 +19129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104884
+  m_Name: pb_Mesh32810
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19303,7 +19303,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104534
+  m_Name: pb_Mesh32460
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22963,7 +22963,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104656
+  m_Name: pb_Mesh32582
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25796,7 +25796,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104360
+  m_Name: pb_Mesh32286
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26248,7 +26248,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105032
+  m_Name: pb_Mesh32960
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29130,7 +29130,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104958
+  m_Name: pb_Mesh32886
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32298,7 +32298,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-127364
+  m_Name: pb_Mesh-4616
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35408,7 +35408,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh104400
+  m_Name: pb_Mesh32326
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42743,6 +42743,7 @@ GameObject:
   - component: {fileID: 4972167996707303312}
   - component: {fileID: 4972167996707303311}
   - component: {fileID: 4972167996707303310}
+  - component: {fileID: 4972167996707303314}
   m_Layer: 0
   m_Name: Sci Fi Gates (2)
   m_TagString: Puerta
@@ -42859,6 +42860,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 4972167996707074989}
+  _doorAudioSource: {fileID: 4972167996707303314}
+  _doorAudioClips:
+  - {fileID: 8300000, guid: 8e56b73bae7c470489cfad788ab6271c, type: 3}
+  - {fileID: 8300000, guid: bd4d15a3a449fd048b2787501d926d42, type: 3}
 --- !u!114 &4972167996707303313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42874,6 +42879,102 @@ MonoBehaviour:
   canOpen: 0
   index: 0
   animatorDoor: {fileID: 4972167996707303311}
+--- !u!82 &4972167996707303314
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167996707074989}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 100
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.49
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!23 &4972167996709072227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43128,6 +43229,7 @@ GameObject:
   - component: {fileID: 4972167996984568789}
   - component: {fileID: 4972167996984568788}
   - component: {fileID: 4972167996984568787}
+  - component: {fileID: 4972167996984568791}
   m_Layer: 0
   m_Name: Sci Fi Gates (3)
   m_TagString: Puerta
@@ -43181,6 +43283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 4972167996984568786}
+  _doorAudioSource: {fileID: 4972167996984568791}
+  _doorAudioClips:
+  - {fileID: 8300000, guid: 8e56b73bae7c470489cfad788ab6271c, type: 3}
+  - {fileID: 8300000, guid: bd4d15a3a449fd048b2787501d926d42, type: 3}
 --- !u!114 &4972167996984568790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43196,6 +43302,102 @@ MonoBehaviour:
   canOpen: 0
   index: 0
   animatorDoor: {fileID: 4972167996984568788}
+--- !u!82 &4972167996984568791
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167996984568786}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 100
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.49
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4972167996984568792
 GameObject:
   m_ObjectHideFlags: 0
@@ -43443,6 +43645,7 @@ GameObject:
   - component: {fileID: 4972167998352563975}
   - component: {fileID: 4972167998352563976}
   - component: {fileID: 4972167998352563977}
+  - component: {fileID: 4972167998352563978}
   m_Layer: 0
   m_Name: Sci Fi Gates
   m_TagString: Puerta
@@ -43514,7 +43717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4972167998352196389}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.7955017, y: -4.55851, z: 1.9557769}
+  m_LocalPosition: {x: 0.707, y: -4.55851, z: 1.9557769}
   m_LocalScale: {x: 1, y: 2, z: 1.5000002}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43570,8 +43773,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3.1772394, z: 3.039195}
-  m_Center: {x: 0, y: 0, z: -1.0196013}
+  m_Size: {x: 3, y: 3.1772394, z: 3.3003898}
+  m_Center: {x: 0, y: 0, z: -0.88900346}
 --- !u!114 &4972167998352563977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43585,6 +43788,106 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 4972167998352196389}
+  _doorAudioSource: {fileID: 4972167998352563978}
+  _doorAudioClips:
+  - {fileID: 8300000, guid: 8e56b73bae7c470489cfad788ab6271c, type: 3}
+  - {fileID: 8300000, guid: bd4d15a3a449fd048b2787501d926d42, type: 3}
+--- !u!82 &4972167998352563978
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167998352196389}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 100
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.49
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &4972167998352563979
 Transform:
   m_ObjectHideFlags: 0
@@ -43877,6 +44180,7 @@ GameObject:
   - component: {fileID: 4972167998708643759}
   - component: {fileID: 4972167998708643758}
   - component: {fileID: 4972167998708643761}
+  - component: {fileID: 4972167998708643762}
   m_Layer: 0
   m_Name: Sci Fi Gates (1)
   m_TagString: Puerta
@@ -43980,6 +44284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 4972167998708149133}
+  _doorAudioSource: {fileID: 4972167998708643762}
+  _doorAudioClips:
+  - {fileID: 8300000, guid: 8e56b73bae7c470489cfad788ab6271c, type: 3}
+  - {fileID: 8300000, guid: bd4d15a3a449fd048b2787501d926d42, type: 3}
 --- !u!114 &4972167998708643760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44008,6 +44316,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 3.0597048, z: 3.2835677}
   m_Center: {x: 0, y: 0, z: -0.8359583}
+--- !u!82 &4972167998708643762
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167998708149133}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 100
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.49
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!33 &4972167998709413763
 MeshFilter:
   m_ObjectHideFlags: 0
