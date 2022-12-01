@@ -35,10 +35,7 @@ public class DoorInteract : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                     {
-                    
-                    _doorAudioSource.PlayOneShot(_doorAudioClips[1]);
-                         
-                        
+                    _doorAudioSource.PlayOneShot(_doorAudioClips[1]);     
                     }
             }
         }
