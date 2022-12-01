@@ -50,13 +50,9 @@ public class Enemy : MonoBehaviour
         }
         
     }
-    private void EnemyTakeDamage() {
-        if(attack.lightMelee == true){
-            _enemyHealth.DmgUnit(attack.LightMeleeDamage);
-            Debug.Log(_enemyHealth.Health);
-        }else{
-            _enemyHealth.DmgUnit(attack.HeavyMeleeDamage);
-        }
+    
+    public void EnemyTakeDamage() {
+        _enemyHealth.DmgUnit(10);
 
         if(_enemyHealth.Health <= 0){
             OnDeath?.Invoke();

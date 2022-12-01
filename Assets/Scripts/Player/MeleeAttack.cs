@@ -71,6 +71,7 @@ public class MeleeAttack : MonoBehaviour
         
         if(Physics.Raycast(ray, out hit, range))
         {
+            Debug.Log("O");
             if(hit.transform.TryGetComponent<Enemy>(out Enemy ts)){
                 ts.GetHit(ray.direction);
                 Debug.Log("Hit");
