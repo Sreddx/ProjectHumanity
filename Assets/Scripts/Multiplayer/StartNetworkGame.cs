@@ -58,6 +58,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
             Debug.Log("I am host");
             OnPlayerJoinedEvent?.Invoke(runner, player);
         }else {
+            
             Debug.Log("I am client");
         }
     }
