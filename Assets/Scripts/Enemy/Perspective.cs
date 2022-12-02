@@ -35,14 +35,9 @@ public class Perspective : Sense
             
             if (Physics.Raycast(transform.position, rayDirection, out hit, viewDistance)) 
             {
-                Aspect aspect = hit.collider.GetComponent<Aspect>();
-                if (aspect != null)
+                if (hit.collider.CompareTag("Player")) //Check if player is within view distance
                 {
-                    //Check the aspect
-                    if (aspect.aspectType != aspectName)
-                    {
-                        _animator.SetBool("isPlayerVisible", true);
-                    }
+                    _animator.SetBool("isPlayerVisible", true);
                 }
             }
         }else{
