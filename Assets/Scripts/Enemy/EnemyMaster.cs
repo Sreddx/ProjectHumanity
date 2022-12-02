@@ -21,13 +21,13 @@ public class EnemyMaster : MonoBehaviour
     
     private int _currentTarget;
     private float _distanceFromTarget;
-    [SerializeField] private Transform[] _waypoints = null;
+    [SerializeField] private List<Transform> _waypoints;
+  
     
 
     private void Awake() {
         _player = GameObject.FindGameObjectWithTag("Player");
-        
-        _currentTarget = 0;
+        _currentTarget = Random.Range(0, _waypoints.Count);
         _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);
     }
 
@@ -45,14 +45,15 @@ public class EnemyMaster : MonoBehaviour
     }
 
     public void SetNextPoint() {
-        switch (_currentTarget) {
+        _currentTarget = Random.Range(0, _waypoints.Count);
+        /*switch (_currentTarget) {
             case 0:
                 _currentTarget = 1;
                 break;
             case 1:
                 _currentTarget = 0;
                 break;
-        }
+        }*/
         _navMeshAgent.SetDestination(_waypoints[_currentTarget].position);
     }
 
