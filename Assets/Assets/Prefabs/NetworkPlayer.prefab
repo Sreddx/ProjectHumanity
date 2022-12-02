@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 722856690}
   - component: {fileID: 7712278175701485816}
   - component: {fileID: 5215834387078270077}
+  - component: {fileID: 6078859504939328675}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Player
@@ -229,6 +230,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 5919138329533614969}
   - {fileID: 5215834387078270077}
+  - {fileID: 6078859504939328675}
   SimulationBehaviours: []
 --- !u!114 &5215834387078270077
 MonoBehaviour:
@@ -256,6 +258,22 @@ MonoBehaviour:
     RotBlendStart: 0.1
     RotBlendEnd: 0.5
     RotTeleportRadians: 1.5
+--- !u!114 &6078859504939328675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027490478255137602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433b52e482cc0a1498f651e9c8ea41df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _playerRef: 0
+  camNetObj: {fileID: 2193024773335962783}
+  objSpawner: {fileID: 0}
 --- !u!1 &5027490478279056915
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +867,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 5841027983582781759, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.8550106
+      objectReference: {fileID: 0}
     - target: {fileID: 5841027984675777276, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_Follow
       value: 
@@ -857,6 +879,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 5027490478255137660}
+    - target: {fileID: 5841027984675777276, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.8550106
+      objectReference: {fileID: 0}
     - target: {fileID: 5841027984675777277, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9605756
@@ -873,6 +899,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 5027490478255137660}
+    - target: {fileID: 5841027984758673842, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.8550106
+      objectReference: {fileID: 0}
     - target: {fileID: 5841027984758673843, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99886495
@@ -891,7 +921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985074001801, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_Name
-      value: MultiplayerCamHolder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841027985074001801, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985074001802, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_RootOrder
@@ -937,6 +971,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5841027985341681105, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5841027985341681107, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9605756
@@ -959,11 +997,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985341681107, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000021503004
+      value: -0.0000000021503013
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985341681107, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.0234115e-10
+      value: 1.0236399e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841027985421615694, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.8550106
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985421615695, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -975,11 +1017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985421615695, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017659856
+      value: -0.000000017659858
       objectReference: {fileID: 0}
     - target: {fileID: 5841027985421615695, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000016409462
+      value: 0.0000000016409464
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 158d2b5d440105249a9460a9763f655f, type: 3}
@@ -1005,6 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd21ff3e93c2f94fb38e824f218566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerID: 0
 --- !u!114 &5633432832238893636 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 93811674607188306, guid: 158d2b5d440105249a9460a9763f655f, type: 3}

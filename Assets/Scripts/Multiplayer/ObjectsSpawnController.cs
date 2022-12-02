@@ -15,16 +15,32 @@ public class ObjectsSpawnController : MonoBehaviour
     private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
     public UnityEvent OnPlayerSpawned;
     public UnityEvent<Transform> OnCameraSpawned;
+    
+    [Networked] public int PlayerCount 
+    { 
+        get{return _spawnedCharacters.Count;}
+        set{value = _spawnedCharacters.Count;}
+    }
+
+
 
     public void SpawnPlayer(NetworkRunner runner, PlayerRef player)
     {
+        PlayerCount = _spawnedCharacters.Count+1;
+        
         Vector3 spawnPos = transform.position;
         NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPos, Quaternion.identity, player);
         _spawnedCharacters.Add(player, networkPlayerObject);
+        runner.SetPlayerObject(player, networkPlayerObject);
+        networkPlayerObject.AssignInputAuthority(player);
+        //networkPlayerObject.transform.GetChild(2).GetComponent<NetworkObject>().AssignInputAuthority(player);
+        networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>()._playerID = PlayerCount;
+        networkPlayerObject.GetComponent<DisableOtherCameras>()._playerRef = PlayerCount;
         
-        networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>().SpawnedPlayers.Add(player, networkPlayerObject);
-        networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>().CurrentPlayerRef = player;
-        
+
+        //networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>().SpawnedPlayers.Add(player, networkPlayerObject);
+        //networkPlayerObject.transform.GetChild(2).GetComponent<RemoveParent>().CurrentPlayerRef = PlayerCount;
+        OnPlayerSpawned?.Invoke();
     }
     public void SpawnCam(NetworkRunner runner, NetworkObject player)
     {
@@ -41,6 +57,8 @@ public class ObjectsSpawnController : MonoBehaviour
 
         playerCam.transform.GetChild(1).GetComponent<MultiplayerThirdPersonCam>().LookForPlayer(player.transform);
     }
+
+    
 
     
 }

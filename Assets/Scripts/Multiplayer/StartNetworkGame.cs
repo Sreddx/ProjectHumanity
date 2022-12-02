@@ -52,10 +52,10 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        Debug.Log("Player joined");
+        //Debug.Log("Player joined");
         if(runner.IsServer)
         {
-            Debug.Log("I am host");
+            //Debug.Log("I am host");
             OnPlayerJoinedEvent?.Invoke(runner, player);
         }else {
             
