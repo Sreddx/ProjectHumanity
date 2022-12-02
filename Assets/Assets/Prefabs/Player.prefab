@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1936192405}
-  - component: {fileID: 1936192406}
   m_Layer: 7
   m_Name: Muzzle
   m_TagString: Untagged
@@ -32,21 +31,6 @@ Transform:
   m_Father: {fileID: 8226393862018511221}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1936192406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936192404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15ed5e66e18dce468094d823189c37b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootRate: 0.1
-  m_shotPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
-  cam: {fileID: 0}
 --- !u!1 &254436946609190829
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +302,7 @@ GameObject:
   - component: {fileID: 5027490478977419680}
   - component: {fileID: 8123480106310379682}
   - component: {fileID: 3923596943209848095}
+  - component: {fileID: 2115925774}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -475,7 +460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5027490478255137602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5d7b5f982b982c42bed865ab2716246, type: 3}
   m_Name: 
@@ -772,6 +757,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: {fileID: 0}
+--- !u!114 &2115925774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027490478255137602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15ed5e66e18dce468094d823189c37b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRate: 0.1
+  m_shotPrefab: {fileID: 136330, guid: 2644e6485916ceb46b6bafe03da645da, type: 3}
+  cam: {fileID: 0}
+  m_shotSpawn: {fileID: 1936192405}
 --- !u!1 &5027490478279056915
 GameObject:
   m_ObjectHideFlags: 0

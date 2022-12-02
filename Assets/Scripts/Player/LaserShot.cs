@@ -9,6 +9,7 @@ public class LaserShot : MonoBehaviour
 
     public GameObject m_shotPrefab;
     public Transform cam;
+    public Transform m_shotSpawn;
 
     RaycastHit hit;
     float range = 1000.0f;
@@ -37,7 +38,7 @@ public class LaserShot : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, range, layerMask))
         {
             Debug.Log(hit.point);
-            GameObject laser = GameObject.Instantiate(m_shotPrefab, this.transform.position, this.transform.rotation) as GameObject;
+            GameObject laser = GameObject.Instantiate(m_shotPrefab, m_shotSpawn.position, m_shotSpawn.rotation) as GameObject;
             laser.GetComponent<ShotBehavior>().setTarget(hit.point);
             GameObject.Destroy(laser, 2f);
 

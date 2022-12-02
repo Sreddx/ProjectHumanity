@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 11468384}
   - component: {fileID: 10825254}
   - component: {fileID: 2836256134292957364}
+  - component: {fileID: 3828093590460340601}
   m_Layer: 0
   m_Name: shot_prefab
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 22.227}
-  m_LocalScale: {x: 0.065401606, y: 0.068238474, z: 0.013896394}
+  m_LocalPosition: {x: 0.0029091, y: 0, z: 22.462}
+  m_LocalScale: {x: 0.09408022, y: 0.09700781, z: 0.00384021}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {x: 0, y: 0, z: 0}
-  collisionExplosion: {fileID: 0}
-  speed: 2
+  collisionExplosion: {fileID: 4212237911574779972, guid: f34d53a9f8cd409428b8d1e3addf4807, type: 3}
+  speed: 50
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0
@@ -203,3 +204,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!136 &3828093590460340601
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.13
+  m_Height: 76.32
+  m_Direction: 2
+  m_Center: {x: -0.71, y: -0.3, z: 23.3}

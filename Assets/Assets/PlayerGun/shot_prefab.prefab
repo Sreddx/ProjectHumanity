@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 24.968}
-  m_LocalScale: {x: 0.10834062, y: 0.17853038, z: 0.0012565318}
+  m_LocalPosition: {x: 0, y: 0, z: 24.371}
+  m_LocalScale: {x: 0.027716, y: 0.027716, z: 0.025115876}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {x: 0, y: 0, z: 0}
   collisionExplosion: {fileID: 0}
-  speed: 50
+  speed: 500
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0
