@@ -25,6 +25,10 @@ public class AudioManager : MonoBehaviour
      public void OnPlayerGainHealth() {
         _playerAudioSource.PlayOneShot(_playerAudioClips[3]);
     }
+    //Play Sound for OnShoot
+    public void OnShootSound() {
+        _playerAudioSource.PlayOneShot(_playerAudioClips[4]);
+    }
 
 
     

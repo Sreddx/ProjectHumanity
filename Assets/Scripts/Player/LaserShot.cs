@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LaserShot : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class LaserShot : MonoBehaviour
     public GameObject m_shotPrefab;
     public Transform cam;
     public Transform m_shotSpawn;
+    //Event for shooting
+    [SerializeField] private UnityEvent OnShooting;
 
     RaycastHit hit;
     float range = 1000.0f;
@@ -39,6 +42,7 @@ public class LaserShot : MonoBehaviour
         {
             Debug.Log(hit.point);
             GameObject laser = GameObject.Instantiate(m_shotPrefab, m_shotSpawn.position, m_shotSpawn.rotation) as GameObject;
+            OnShooting.Invoke();
             laser.GetComponent<ShotBehavior>().setTarget(hit.point);
             GameObject.Destroy(laser, 2f);
 
