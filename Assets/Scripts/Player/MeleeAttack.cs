@@ -52,31 +52,32 @@ public class MeleeAttack : MonoBehaviour
     void Action(){
         if (Input.GetKeyDown(KeyCode.Mouse0)){
             lightMelee = true;
-            ShootRayCast();
+            //ShootRayCast();
             lightMelee = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse4)){
             heavyMelee = true;
-            ShootRayCast();
+            //ShootRayCast();
             heavyMelee = false;
             
         }
     }
 
-    void ShootRayCast()
+    /*void ShootRayCast()
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position, orientation.transform.forward);
         
         if(Physics.Raycast(ray, out hit, range))
         {
+            Debug.Log("O");
             if(hit.transform.TryGetComponent<Enemy>(out Enemy ts)){
                 ts.GetHit(ray.direction);
                 Debug.Log("Hit");
             }
         }
-    }
+    }*/
 
     /*private void Punch(){
         Enemy.transform.position += transform.forward * Time.deltaTime * Knockback;

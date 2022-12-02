@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void GetHit(Vector3 direction){
+    /*public void GetHit(Vector3 direction){
 
         EnemyTakeDamage(); //Call method to take damage
         StartCoroutine(blink()); //Call blink for visual damage feedback
@@ -49,14 +49,10 @@ public class Enemy : MonoBehaviour
             this.transform.parent = null;
         }
         
-    }
-    private void EnemyTakeDamage() {
-        if(attack.lightMelee == true){
-            _enemyHealth.DmgUnit(attack.LightMeleeDamage);
-            Debug.Log(_enemyHealth.Health);
-        }else{
-            _enemyHealth.DmgUnit(attack.HeavyMeleeDamage);
-        }
+    }*/
+    
+    public void EnemyTakeDamage() {
+        _enemyHealth.DmgUnit(10);
 
         if(_enemyHealth.Health <= 0){
             OnDeath?.Invoke();
@@ -73,5 +69,17 @@ public class Enemy : MonoBehaviour
 
     private void OnDisable() {
         OnDeath?.RemoveListener(EnemyKilled);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        //If get hit by laser attack
+        if(other.gameObject.name == "shot_prefab(Clone)"){
+            EnemyTakeDamage();
+            //Destroy shot 
+            //Destroy(other.gameObject);
+            StartCoroutine(blink());
+        }
+        
+
     }
 }
