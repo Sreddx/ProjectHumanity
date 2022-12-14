@@ -1,9 +1,9 @@
 # Project Humanity
 Project Humanity is a third person action platformer dungeon crawler game made in Unity. We took inspiration from games like Hades, Blue Fire, Risk of Rain 2 and Metroid Prime.
-The project is ongoing and is currently being designed and developed.
+You can try the final game prototype at https://silvershield000.itch.io/project-humanity
 
 # Multiplayer component
-Project Humanity includes a prototype multiplayer mode that will be delivered as evidence for school project. Although it isn't a predesigned main feature it will showcase a potential new mode as well as our ability to implement multiplayer.
+Project Humanity includes a prototype multiplayer mode that will be delivered as evidence for school project. Although it isn't a predesigned main feature showcases a potential new mode as well as our ability to implement multiplayer.
 
 # Project details
 
